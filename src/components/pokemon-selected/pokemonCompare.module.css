@@ -17,6 +17,11 @@
   --cero-point-nine-size: 0.9rem;
 }
 
+
+.bodyChart{
+  overflow: scroll;
+}
+
 .versus-names {
   padding: 0.5rem;
   width: 100%;
