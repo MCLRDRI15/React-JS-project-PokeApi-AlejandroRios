@@ -1,0 +1,29 @@
+.pokelist-section {
+  z-index: -1;
+  margin: 0 10rem 0 10rem;
+  padding: 2rem 3rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 11rem);
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+@media screen and (max-width: 1200px) and (min-width: 481px) {
+  .pokelist-section {
+    margin: auto;
+    padding: 2rem 3rem;
+    grid-template-columns: repeat(auto-fill, 11rem);
+    justify-content: center;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .pokelist-section {
+    margin: auto;
+    padding: 2rem 0;
+    grid-template-columns: 90%;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+}

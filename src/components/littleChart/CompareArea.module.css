@@ -1,0 +1,29 @@
+:root {
+  --border-name: rgb(97, 97, 97);
+  --background-color: #4789cf;
+  --name-white-color: #ffffffff;
+}
+
+.compare-container {
+  left: 100%;
+  margin: 10px;
+  width: 170px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.littleChart-container {
+  position: relative;
+  opacity: 0.8;
+  right: 1rem;
+}
+
+.name {
+  width: 10rem;
+  border: 1px solid var(--border-name);
+  background: var(--background-color);
+  color: var(--name-white-color);
+  text-align: center;
+  font-weight: 600;
+}

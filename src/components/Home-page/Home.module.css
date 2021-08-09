@@ -1,0 +1,88 @@
+:root {
+  --WhiteColor: #ffffff;
+  --BlueColor: #2958af;
+  --BlueButtonColor: #4789cf;
+
+  --two-point-five: 2.5rem;
+}
+
+.welcome-tittle {
+  margin-top: 4rem;
+  margin-bottom: 1.5rem;
+  font-size: var(--two-point-five);
+  font-weight: 800;
+  color: var(--WhiteColor);
+  text-shadow: 2px 2px 2px var(--BlueColor);
+}
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.pokemons-gif {
+  margin-bottom: 5rem;
+  width: 90%;
+  display: grid;
+  grid-template-columns: 30% 40% 30%;
+  align-items: center;
+}
+
+.home-button {
+  padding: 0.6rem;
+  text-decoration: none;
+  margin: auto;
+  text-align: center;
+  width: 18rem;
+  height: 3rem;
+  border-radius: 10px;
+  border-style: none;
+  color: var(--WhiteColor);
+  font-weight: 900;
+  background: var(--BlueButtonColor);
+}
+
+.home-button:hover {
+  background: var(--WhiteColor);
+  border: 1px solid var(--BlueColor);
+}
+
+.charizard {
+  margin-left: 2rem;
+  width: 300px;
+  height: auto;
+}
+.ivysaur {
+  margin-left: 2rem;
+  width: 300px;
+  height: auto;
+}
+
+@media (max-width: 1030px) {
+  .pokemons-gif {
+    margin: auto;
+    grid-template-columns: 100%;
+    grid-gap: 1.5rem;
+  }
+  .charizard {
+    margin: auto;
+  }
+  .ivysaur {
+    margin: auto;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .charizard {
+    margin: auto;
+    width: 200px;
+  }
+  .ivysaur {
+    margin: auto;
+    width: 200px;
+    margin-bottom: 1rem;
+  }
+  .home-button {
+    width: 90%;
+  }
+}
