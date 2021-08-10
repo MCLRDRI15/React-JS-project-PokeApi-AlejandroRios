@@ -1,8 +1,9 @@
 :root {
-  --backgroundCard: rgb(245, 241, 241);
+  --backgroundCard: #f5f1f1;
   --generalBlueColor: #4789cf;
-  --borderBoxShadow: rgba(0, 0, 0, 0.3) 4px 8px 4px;
-  --borderBoxHover: rgb(255, 255, 255) 5px 12px 4px;
+  --borderBoxShadow: #0000004d 4px 8px 4px;
+  --borderBoxHover: #ffffff 5px 12px 4px;
+  --cardHover: #e4b2b2;
 }
 
 .card {
@@ -12,11 +13,15 @@
   background: var(--backgroundCard);
   border: 2px solid var(--generalBlueColor);
   box-shadow: var(--borderBoxShadow);
+  text-align: center;
+  text-decoration: none;
+  list-style: none;
 }
 
 .card:hover {
   box-shadow: var(--borderBoxHover);
-  transition: box-shadow 0.5s ease-in;
+  background: var(--cardHover);
+  transition: all 0.5s ease-in;
 }
 .pokemon-names {
   position: relative;
@@ -24,9 +29,11 @@
   height: 1.5rem;
   width: 100%;
   background: var(--generalBlueColor);
+}
+.pokemon-name-span{
   color: var(--backgroundCard);
   font-weight: 700;
-  text-align: center;
+  text-decoration: none;
 }
 
 .images {

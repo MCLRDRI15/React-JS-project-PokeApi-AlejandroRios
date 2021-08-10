@@ -32,7 +32,9 @@ const PokemonCard = ({
   return (
     <li className="card" onClick={addPokemonModelView}>
       <img src={imageURL} alt={name} className="images" />
-      <span className="pokemon-names">{name.toUpperCase()}</span>
+      <div className="pokemon-names">
+      <span className="pokemon-name-span">{name.toUpperCase()}</span>
+      </div>
     </li>
   );
 };

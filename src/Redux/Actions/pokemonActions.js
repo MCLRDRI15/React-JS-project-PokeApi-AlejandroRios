@@ -13,6 +13,7 @@ export const ADD_SELECTED_POKEMON = "ADD_SELECTED_POKEMON";
 export const CLEAN_SELECTED_POKEMON = "CLEAN_SELECTED_POKEMON";
 export const SET_COMPARISON_CHART = "SET_SHOW_COMPARISON_CHART";
 export const ADD_SEARCH = "ADD_SEARCH";
+export const RETURN_TO_ORIGINAL_LIST = "RETURN_TO_ORIGINAL_LIST";
 
 /* Function that brings pokemons data from API URL */
 export const FetchRequest = (counter) => (dispatch) => {
@@ -118,3 +119,13 @@ export const addSearch = (search, pokemonsArrayIn) => ({
     pokemonsList: pokemonsArrayIn
   },
 });
+
+/* This function assigns the original array of pokemons to the list */
+export const returnToList = () => (dispatch) => {
+  dispatch({
+    type: RETURN_TO_ORIGINAL_LIST,
+    payload: {
+      pokemonsList: [],
+    },
+  });
+};
