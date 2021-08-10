@@ -12,13 +12,15 @@ const Home = () => {
           <h1 className="welcome-tittle">Welcome to PokéApp</h1>
           <div className="pokemons-gif">
             <img className="charizard" src={charizard} alt="POKEMON" />
-            <NavLink
-              className="home-button"
-              to="/pokemons"
-              activeClassName="navActive"
-            >
-              Find pokemons
-            </NavLink>
+            <span className="button-text-controller">
+              <NavLink
+                className="home-button"
+                to="/pokemons"
+                activeClassName="navActive"
+              >
+                Find pokemons
+              </NavLink>
+            </span>
             <img className="ivysaur" src={ivysaur} alt="POKEMON" />
           </div>
         </section>

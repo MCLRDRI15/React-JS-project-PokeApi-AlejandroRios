@@ -27,18 +27,24 @@
   align-items: center;
 }
 
-.home-button {
-  padding: 0.6rem;
-  text-decoration: none;
+.button-text-controller {
   margin: auto;
-  text-align: center;
   width: 18rem;
   height: 3rem;
   border-radius: 10px;
+  background: var(--BlueButtonColor);
+  text-align: center;
+}
+
+.home-button {
+  position: relative;
+  top: 0.7rem;
+  text-decoration: none;
+  margin: auto;
+  text-align: center;
   border-style: none;
   color: var(--WhiteColor);
-  font-weight: 900;
-  background: var(--BlueButtonColor);
+  font-weight: 800;
 }
 
 .home-button:hover {
@@ -55,6 +61,10 @@
   margin-left: 2rem;
   width: 300px;
   height: auto;
+}
+
+.text-muted {
+  text-align: center;
 }
 
 @media (max-width: 1030px) {
@@ -83,6 +93,9 @@
     margin-bottom: 1rem;
   }
   .home-button {
+    width: 90%;
+  }
+  .button-text-controller{
     width: 90%;
   }
 }
