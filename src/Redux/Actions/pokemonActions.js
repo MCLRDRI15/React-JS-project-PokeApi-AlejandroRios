@@ -1,11 +1,10 @@
 import { POKEAPI } from "../../pages";
 
 /* Actions for consume the API */
-export const FETCH_REQUEST = "FETCH_POSTS_REQUEST";
-export const FETCH_SUCCESS = "FETCH_POSTS_SUCCESS";
-export const FETCH_SUCCESS2 = "FETCH_POSTS_SUCCESS2";
-export const FETCH_ERROR = "FETCH_POSTS_ERROR";
-export const HANDLER_FETCH = "TRIGEER_FETCH";
+export const FETCH_POKEMONS_REQUEST = "FETCH_POKEMONS_REQUEST";
+export const FETCH_POKEMONS_SUCCESS = "FETCH_POKEMONS_SUCCESS";
+export const FETCH_POKEMONS_ERROR = "FETCH_POKEMONS_ERROR";
+export const HANDLER_POKEMONS_FETCH = "HANDLER_POKEMONS_FETCH";
 
 /* Actions after charge the porkemons */
 export const FILTER_POKEMONS = "FILTER_POKEMONS";
@@ -19,12 +18,12 @@ export const RETURN_TO_ORIGINAL_LIST = "RETURN_TO_ORIGINAL_LIST";
 export const FetchRequest = (counter) => (dispatch) => {
   const url = `${POKEAPI}pokemon?offset=${counter}&limit=20`;
 
-  dispatch({ type: FETCH_REQUEST });
+  dispatch({ type: FETCH_POKEMONS_REQUEST });
   fetch(url)
     .then((res) => res.json())
     .then((data) => {
       dispatch({
-        type: FETCH_SUCCESS,
+        type: FETCH_POKEMONS_SUCCESS,
         payload: {
           pokemons: data,
         },
@@ -32,7 +31,7 @@ export const FetchRequest = (counter) => (dispatch) => {
     })
     .catch((error) => {
       dispatch({
-        type: FETCH_ERROR,
+        type: FETCH_POKEMONS_ERROR,
         payload: {
           error: error.toString(),
         },
@@ -43,7 +42,7 @@ export const FetchRequest = (counter) => (dispatch) => {
 /* function that handle the number of pokemons in the list which are called from the API */
 export const HandlerFetch = (pokemonsInList) => (dispatch) => {
   dispatch({
-    type: HANDLER_FETCH,
+    type: HANDLER_POKEMONS_FETCH,
     payload: {
       counter: Number(pokemonsInList) + 20,
     },
@@ -83,7 +82,7 @@ export const addSelectedPokemon =
       })
       .catch((error) => {
         dispatch({
-          type: FETCH_ERROR,
+          type: FETCH_POKEMONS_ERROR,
           payload: {
             error: error.toString(),
           },

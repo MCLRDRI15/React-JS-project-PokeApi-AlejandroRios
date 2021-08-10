@@ -1,8 +1,8 @@
 import {
-  FETCH_REQUEST,
-  FETCH_SUCCESS,
-  HANDLER_FETCH,
-  FETCH_ERROR,
+  FETCH_POKEMONS_REQUEST,
+  FETCH_POKEMONS_SUCCESS,
+  HANDLER_POKEMONS_FETCH,
+  FETCH_POKEMONS_ERROR,
   ADD_SELECTED_POKEMON,
   CLEAN_SELECTED_POKEMON,
   SET_COMPARISON_CHART,
@@ -27,13 +27,13 @@ const initialState = {
 
 function pokemons(state = initialState, action) {
   switch (action.type) {
-    case FETCH_REQUEST:
+    case FETCH_POKEMONS_REQUEST:
       return {
         ...state,
         isFetching: true,
       };
 
-    case FETCH_SUCCESS:
+    case FETCH_POKEMONS_SUCCESS:
       return {
         ...state,
         isFetching: false,
@@ -49,14 +49,14 @@ function pokemons(state = initialState, action) {
         ],
       };
 
-    case FETCH_ERROR:
+    case FETCH_POKEMONS_ERROR:
       return {
         ...state,
         isFetching: false,
         error: action.payload.error,
       };
 
-    case HANDLER_FETCH:
+    case HANDLER_POKEMONS_FETCH:
       return {
         ...state,
         Counter: action.payload.counter,

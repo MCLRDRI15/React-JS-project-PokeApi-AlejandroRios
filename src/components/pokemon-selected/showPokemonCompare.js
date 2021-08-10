@@ -10,7 +10,6 @@ const ShowPokemonCompare = ({
 }) => (
   <div
     className={ViewState ? "compare-container-chart" : "hidden"}
-    onclick={cleanPokemonArray}
   >
     <ScrollLock isActive={ViewState}> 
     <div className="pokecard-compare-container">

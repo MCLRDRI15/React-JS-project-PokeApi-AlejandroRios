@@ -47,8 +47,12 @@
   font-weight: 800;
 }
 
-.home-button:hover {
+.button-text-controller:hover > .home-button {
+  color: var(--BlueColor);
+}
+.button-text-controller:hover {
   background: var(--WhiteColor);
+  color: var(--BlueColor);
   border: 1px solid var(--BlueColor);
 }
 

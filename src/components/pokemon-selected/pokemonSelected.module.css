@@ -11,6 +11,7 @@
   --border-black-color: #000000;
   --text-red-color: #e43011;
   --general-white-color: #ffffffff;
+  --compare-blue-color: #295597;
 
   --one-point-one-size: 1.1rem;
   --one-point-two-size: 1.2rem;
@@ -37,7 +38,7 @@
 
 .pokecard-container {
   background: var(--cardBackground);
-  margin: 1rem auto 2rem auto;
+  margin: 1rem auto 4rem auto;
   padding: 1rem;
   width: 40%;
   border-radius: 10px;
@@ -48,7 +49,7 @@
 
 @media screen and (max-width: 540px) {
   .pokecard-container {
-    width: 90%;
+    width: 85%;
   }
 }
 
@@ -59,8 +60,10 @@
 }
 
 .closeChartButton {
+  margin-left: 1rem;
   width: 2rem;
-  font-weight: 700;
+  height: 2.2rem;
+  font-weight: 800;
   color: var(--text-red-color);
   background-color: var(--general-white-color);
 }
@@ -79,6 +82,12 @@
 
 .compareButton {
   margin-left: 1rem;
+  margin-bottom: 0.7rem;
+  width: 10rem;
+  height: 2.3rem;
+  font-size: var(--one-point-one-size);
+  font-weight: 700;
+  color: var(--compare-blue-color);
 }
 
 .show-image {
