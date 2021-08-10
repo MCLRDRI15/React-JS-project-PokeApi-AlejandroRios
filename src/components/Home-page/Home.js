@@ -1,8 +1,8 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import "./Home.module.css";
-import Charizard from "../img-folder/Charizard.gif";
-import Ivysaur from "../img-folder/ivysaur.gif";
+import charizard from "../img-folder/charizard.gif";
+import ivysaur from "../img-folder/ivysaur.gif";
 
 const Home = () => {
   return (
@@ -11,7 +11,7 @@ const Home = () => {
         <section className="section">
           <h1 className="welcome-tittle">Welcome to PokéApp</h1>
           <div className="pokemons-gif">
-            <img className="charizard" src={Charizard} alt="POKEMON" />
+            <img className="charizard" src={charizard} alt="POKEMON" />
             <NavLink
               className="home-button"
               to="/pokemons"
@@ -19,7 +19,7 @@ const Home = () => {
             >
               Find pokemons
             </NavLink>
-            <img className="ivysaur" src={Ivysaur} alt="POKEMON" />
+            <img className="ivysaur" src={ivysaur} alt="POKEMON" />
           </div>
         </section>
         <footer className="text-muted">
