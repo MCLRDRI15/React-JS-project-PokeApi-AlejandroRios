@@ -9,6 +9,7 @@
   background: var(--bubble-color);
   opacity: 0.3;
   position: fixed;
+  z-index: 10;
   bottom: -150px;
   animation: bubbles 3s linear infinite;
 }
