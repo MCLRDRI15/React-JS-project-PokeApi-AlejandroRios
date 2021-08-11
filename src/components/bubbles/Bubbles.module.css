@@ -19,12 +19,8 @@
   border-radius: 50%;
   background: var(--bubble-color);
   left: 5%;
-  animation-duration: 2s;
+  animation-duration: 3s;
   animation-delay: 2s;
-  opacity: 0.3;
-  position: absolute;
-  bottom: -150;
-  animation: bubbles 3s linear infinite;
 }
 
 .bubble-two {
@@ -35,10 +31,6 @@
   left: 18%;
   animation-duration: 3s;
   animation-delay: 1s;
-  opacity: 0.3;
-  position: absolute;
-  bottom: -150;
-  animation: bubbles 3s linear infinite;
 }
 
 .bubble-three {
@@ -49,10 +41,6 @@
   left: 20%;
   animation-duration: 3s;
   animation-delay: 2s;
-  opacity: 0.3;
-  position: absolute;
-  bottom: -150;
-  animation: bubbles 3s linear infinite;
 }
 
 .bubble-four {
@@ -63,10 +51,6 @@
   left: 30%;
   animation-duration: 2s;
   animation-delay: 1s;
-  opacity: 0.3;
-  position: absolute;
-  bottom: -150;
-  animation: bubbles 3s linear infinite;
 }
 
 .bubble-five {
@@ -77,10 +61,6 @@
   left: 40%;
   animation-duration: 4s;
   animation-delay: 2s;
-  opacity: 0.3;
-  position: absolute;
-  bottom: -150;
-  animation: bubbles 3s linear infinite;
 }
 
 .bubble-six {
@@ -91,10 +71,6 @@
   left: 45%;
   animation-duration: 3s;
   animation-delay: 1s;
-  opacity: 0.3;
-  position: absolute;
-  bottom: -150;
-  animation: bubbles 3s linear infinite;
 }
 
 .bubble-seven {
@@ -105,10 +81,6 @@
   left: 57%;
   animation-duration: 2s;
   animation-delay: 2s;
-  opacity: 0.3;
-  position: absolute;
-  bottom: -150;
-  animation: bubbles 3s linear infinite;
 }
 
 .bubble-eight {
@@ -119,10 +91,6 @@
   left: 63%;
   animation-duration: 4s;
   animation-delay: 1s;
-  opacity: 0.3;
-  position: absolute;
-  bottom: -150;
-  animation: bubbles 3s linear infinite;
 }
 
 .bubble-nine {
@@ -133,10 +101,6 @@
   left: 59%;
   animation-duration: 3s;
   animation-delay: 1s;
-  opacity: 0.3;
-  position: absolute;
-  bottom: -150;
-  animation: bubbles 3s linear infinite;
 }
 
 .bubble-ten {
@@ -147,10 +111,6 @@
   left: 70%;
   animation-duration: 2s;
   animation-delay: 3s;
-  opacity: 0.3;
-  position: absolute;
-  bottom: -150;
-  animation: bubbles 3s linear infinite;
 }
 
 .bubble-eleven {
@@ -161,10 +121,6 @@
   left: 78%;
   animation-duration: 3s;
   animation-delay: 1s;
-  opacity: 0.3;
-  position: absolute;
-  bottom: -150;
-  animation: bubbles 3s linear infinite;
 }
 .bubble-twelve {
   width: 15px;
@@ -174,10 +130,6 @@
   left: 70%;
   animation-duration: 2s;
   animation-delay: 3s;
-  opacity: 0.3;
-  position: absolute;
-  bottom: -150;
-  animation: bubbles 3s linear infinite;
 }
 .bubble-thirteen {
   width: 10px;
@@ -187,10 +139,6 @@
   left: 84%;
   animation-duration: 3s;
   animation-delay: 2s;
-  opacity: 0.3;
-  position: absolute;
-  bottom: -150;
-  animation: bubbles 3s linear infinite;
 }
 .bubble-fourteen {
   width: 15px;
@@ -200,10 +148,7 @@
   left: 90%;
   animation-duration: 2s;
   animation-delay: 3s;
-  opacity: 0.3;
-  position: absolute;
-  bottom: -150;
-  animation: bubbles 3s linear infinite;
+
 }
 .bubble-fifteen {
   width: 10px;
@@ -213,10 +158,6 @@
   left: 95%;
   animation-duration: 4s;
   animation-delay: 2s;
-  opacity: 0.3;
-  position: absolute;
-  bottom: -150;
-  animation: bubbles 3s linear infinite;
 }
 .bubble-sixteen {
   width: 15px;
@@ -226,10 +167,6 @@
   left: 10%;
   animation-duration: 4s;
   animation-delay: 1s;
-  opacity: 0.3;
-  position: absolute;
-  bottom: -150;
-  animation: bubbles 3s linear infinite;
 }
 .bubble-seventeen {
   width: 10px;
@@ -239,10 +176,6 @@
   left: 50%;
   animation-duration: 4s;
   animation-delay: 2s;
-  opacity: 0.3;
-  position: absolute;
-  bottom: -150;
-  animation: bubbles 3s linear infinite;
 }
 .bubble-eighteen {
   width: 10px;
@@ -252,10 +185,6 @@
   left: 40%;
   animation-duration: 4s;
   animation-delay: 1s;
-  opacity: 0.3;
-  position: absolute;
-  bottom: -150;
-  animation: bubbles 3s linear infinite;
 }
 .bubble-nineteen {
   width: 15px;
@@ -265,10 +194,7 @@
   left: 8%;
   animation-duration: 3s;
   animation-delay: 2s;
-  opacity: 0.3;
-  position: absolute;
-  bottom: -150;
-  animation: bubbles 3s linear infinite;
+ 
 }
 .bubble-twenty {
   width: 15px;
@@ -278,10 +204,6 @@
   left: 83%;
   animation-duration: 4s;
   animation-delay: 1s;
-  opacity: 0.3;
-  position: absolute;
-  bottom: -150;
-  animation: bubbles 3s linear infinite;
 }
 
 @keyframes bubbles {

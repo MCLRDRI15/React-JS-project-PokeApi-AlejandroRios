@@ -3,19 +3,19 @@ import "./Bubbles.module.css";
 
 export function Bubbles() {
 
-  const controller = () => {
     const numbers =["one","two","three","four","five","six","eight","nine","ten","eleven","twelve","thirteen",
-    "fourteen","fifteen","sixteen","seventeen","eighteen","nineteen","twenty"]
-    for (var i = 0; i < 20; i++) {
-      document.createElement(`<div className="bubble-${numbers[i]}"></div>`);
+    "fourteen","fifteen","sixteen","seventeen","eighteen","nineteen","twenty"];
+
+    const items = [];
+
+    for (const [index, value] of numbers.entries()) {
+      items.push(<div key={index} className={`bubble bubble-${value}`}></div>);
     }
-  }
+
 
   return (
     <div className="bubbles">
-      {
-        controller
-      }
+        {items}
     </div>
   );
 }
