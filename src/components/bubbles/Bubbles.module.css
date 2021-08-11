@@ -8,8 +8,8 @@
   border-radius: 50%;
   background: var(--bubble-color);
   opacity: 0.3;
-  position: absolute;
-  bottom: -150;
+  position: fixed;
+  bottom: -150px;
   animation: bubbles 3s linear infinite;
 }
 

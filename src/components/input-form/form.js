@@ -59,9 +59,6 @@ const Form = ({ addSearch, pokemonSecondary }) => {
                   ref={input}
                 ></input>
               </div>
-              <button type="submit" className="button" onClick={getInput}>
-                Reload
-              </button>
             </form>
           </div>
         </div>
