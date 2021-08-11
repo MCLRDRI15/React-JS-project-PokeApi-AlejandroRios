@@ -34,12 +34,12 @@ const ShowPokemonCompare = ({
           />
         </div>
         <div className="pokemons-compare-data">
-          <div className="dates">
-            <span className="boxes">{pokemonInPokeball[0].height}m</span>
-            <span className="boxes">{pokemonInPokeball[0].weight}kg</span>
-            <span className="boxes">{pokemonInPokeball[0].gender}</span>
-            <span className="boxes">
-              {" "}
+          <div className="central-dates">
+            <span>{pokemonInPokeball[0].height}m  <strong className="box">Height</strong>   {pokemonInPokeball[1].height}m</span>
+            <span>{pokemonInPokeball[0].weight}kg <strong className="box">Weight </strong>  {pokemonInPokeball[1].weight}kg</span>
+            <span>{pokemonInPokeball[0].gender}   <strong className="box">Gender</strong>   {pokemonInPokeball[1].gender}</span>
+            <div className="dates">
+            <span className="box-compare-left">
               {pokemonInPokeball[0].abilities.map((abilities) => {
                 return (
                   <div key={abilities.ability.name}>
@@ -48,19 +48,8 @@ const ShowPokemonCompare = ({
                 );
               })}
             </span>
-          </div>
-          <div className="central-dates">
-            <span className="box">Height</span>
-            <span className="box">Weight</span>
-            <span className="box">Gender</span>
-            <span className="box">Abilities</span>
-          </div>
-          <div className="dates">
-            <span className="boxes">{pokemonInPokeball[1].height}m</span>
-            <span className="boxes">{pokemonInPokeball[1].weight}kg</span>
-            <span className="boxes">{pokemonInPokeball[1].gender}</span>
-            <span className="boxes">
-              {" "}
+            <span className="box">Abilities</span>  
+            <span className="box-compare-right">
               {pokemonInPokeball[1].abilities.map((abilities) => {
                 return (
                   <div key={abilities.ability.name}>
@@ -69,6 +58,7 @@ const ShowPokemonCompare = ({
                 );
               })}
             </span>
+          </div>
           </div>
         </div>
       </div>

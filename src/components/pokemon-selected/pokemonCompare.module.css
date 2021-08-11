@@ -14,6 +14,7 @@
 
   --one-point-one-size: 1.1rem;
   --one-point-two-size: 1.2rem;
+  --one-point-three-size: 1.3rem;
   --cero-point-nine-size: 0.9rem;
 }
 
@@ -43,16 +44,26 @@
 }
 
 @media screen and (max-width: 400px) {
+  .pokecard-compare-container {
+    width: 85%;
+  }
   .versus-names {
     font-size: var(--cero-point-nine-size);
   }
+  .central-dates .box {
+    margin: auto;
+    font-weight: 500;
+    font-size: var(--one-point-one-size);
+  }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 700px) and (min-width: 401px) {
   .pokecard-compare-container {
     width: 85%;
   }
   .central-dates .box {
+    margin: auto;
+    font-weight: 500;
     font-size: var(--cero-point-nine-size);
   }
 }
@@ -99,9 +110,11 @@
 }
 
 .pokemons-compare-data {
+  width: 100%;
+  margin: 3rem  auto  1rem auto; 
   display: flex;
-  align-content: space-between;
-  margin-bottom: 3rem;
+  flex-direction: column;
+  align-items: center;
 }
 
 .central-dates {
@@ -109,23 +122,20 @@
   margin-right: 0.5rem;
   display: flex;
   flex-direction: column;
+  align-items: center;
   font-weight: 800;
-  color: var(--text-red-color);
 }
 
 .central-dates .box {
-  margin-top: 1rem;
-  font-size: var(--one-point-two-size);
-}
-
-.dates .boxes {
-  margin-top: 1rem;
-  font-size: var(--one-point-two-size);
-  font-weight: 600;
+  margin: 1rem 2rem 1rem 2rem;
+  font-weight: 700;
+  font-size: var(--one-point-three-size);
+  color: var(--text-red-color);
 }
 
 .dates {
   margin: auto;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
   display: flex;
-  flex-direction: column;
 }
