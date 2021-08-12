@@ -2,11 +2,9 @@
   --WhiteColor: #ffffff;
   --BlueColor: #2958af;
   --BlueButtonColor: #4789cf;
-
   --two-point-five: 2.5rem;
 }
-
-.welcome-tittle {
+.welcome{
   margin-top: 4rem;
   margin-bottom: 1.5rem;
   font-size: var(--two-point-five);

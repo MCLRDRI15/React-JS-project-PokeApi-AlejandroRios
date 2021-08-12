@@ -9,7 +9,7 @@ const Home = () => {
     <div>
       <div className="text-center">
         <section className="section">
-          <h1 className="welcome-tittle">Welcome to PokéApp</h1>
+          <h1 className="welcome">Welcome to PokéApp</h1>
           <div className="pokemons-gif">
             <img className="charizard" src={charizard} alt="POKEMON" />
             <span className="button-text-controller">
