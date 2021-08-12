@@ -4,10 +4,10 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./redux/store";
 
-import Form from "./components/input-form/Form";
+import Form from "./components/input-form-component/Form";
 import { Bubbles } from "./components/bubbles/Bubbles";
 import Home from "./components/home-page/Home";
-import Pokelist from "./components/poke-list/PokeList";
+import Pokelist from "./components/pokemons-list/PokeList";
 
 const App = () => {
   return (
