@@ -6,7 +6,7 @@ import store from "./redux/store";
 
 import Form from "./components/input-form-component/Form";
 import { Bubbles } from "./components/bubbles-animation/Bubbles";
-import Home from "./components/home-page/Home";
+import Home from "./components/principal-home-page/Home";
 import Pokelist from "./components/pokemons-list/PokeList";
 
 const App = () => {
