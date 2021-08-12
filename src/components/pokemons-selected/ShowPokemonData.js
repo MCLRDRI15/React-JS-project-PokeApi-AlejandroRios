@@ -1,5 +1,5 @@
 import React from "react";
-import Charts from "../charts-folder/Charts";
+import Charts from "../charts-show-folder/Charts";
 import ScrollLock from 'react-scrolllock';
 import "./PokemonSelected.module.css";
 

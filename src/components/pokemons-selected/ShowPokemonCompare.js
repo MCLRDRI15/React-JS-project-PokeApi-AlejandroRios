@@ -1,5 +1,5 @@
 import React from "react";
-import DobleCharts from "../charts-compare-folder/ChartsCompare";
+import DobleCharts from "../charts-show-compare-folder/ChartsCompare";
 import ScrollLock from 'react-scrolllock';
 import "./PokemonCompare.module.css";
 
