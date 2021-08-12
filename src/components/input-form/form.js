@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 import { FaBars,FaSkullCrossbones } from "react-icons/fa";
 import gengar from "../img-folder/gengar-s.gif";
 import { addSearch, returnToList } from "../../redux/actions/PokemonActions";
-import CompareArea from "../little-chart/CompareArea";
+import CompareArea from "../little-chart-compare/CompareArea";
 import tittle from "../img-folder/tittle.png";
 import "./FormStyles.module.css";
 
