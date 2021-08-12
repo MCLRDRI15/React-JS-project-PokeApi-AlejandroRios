@@ -99,7 +99,7 @@ function pokemons(state = initialState, action) {
     case RETURN_TO_ORIGINAL_LIST:
       return{
         ...state,
-        pokemonsList: action.payload.pokemonSecondary.concat((pokemon) => pokemon.name.toLowerCase().includes(state.search.toLowerCase()))
+        pokemonsList: [...action.payload.pokemonSecondary]
       }
 
 

@@ -120,10 +120,12 @@ export const addSearch = (search, pokemonsArrayIn) => ({
 });
 
 /* This function assigns the original array of pokemons to the list */
-export const returnToList = (pokemonSecondary) => ({
-  type: ADD_SEARCH,
-  payload: {
-    pokemonsSecondary: pokemonSecondary
-  },
-});
+export const returnToList = (pokemonSecondary) => (dispatch) => {
+  dispatch({
+    type: CLEAN_SELECTED_POKEMON,
+    payload: {
+      pokemonSecondary: pokemonSecondary,
+    },
+  });
+};
   

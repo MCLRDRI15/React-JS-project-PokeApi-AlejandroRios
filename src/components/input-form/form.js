@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
-import { FaBars } from "react-icons/fa";
+import { FaBars,FaSkullCrossbones } from "react-icons/fa";
 import gengar from "../img-folder/gengar-s.gif";
 import { addSearch, returnToList } from "../../redux/actions/PokemonActions";
 import CompareArea from "../little-chart/CompareArea";
@@ -11,13 +11,14 @@ import "./FormStyles.module.css";
 const Form = ({ addSearch, pokemonSecondary }) => {
   const input = useRef();
   let [hamburguerState, hamburguerStylesHandler] = useState(false);
+  let [inputCloseState, inputCloseHandler] = useState(false);
   const getInput = (inputEvent) => {
-    if (inputEvent.target.value === ""){
+    if (inputEvent.target.value === "") {
       returnToList(pokemonSecondary);
-    }else{
+    } else {
       addSearch(inputEvent.target.value, pokemonSecondary);
+      setTimeout( inputCloseHandler(!inputCloseState), 5000);
     }
-    
   };
 
   return (
@@ -56,13 +57,16 @@ const Form = ({ addSearch, pokemonSecondary }) => {
             <form className="form">
               <div className="input-container">
                 <img className="pokemonimg-active" src={gengar} alt="filter" />
-                <input
-                  className="input"
-                  type="text"
-                  placeholder="Ex: Charmander"
-                  onChange={getInput}
-                  ref={input}
-                ></input>
+                <div className="input-div-container">
+                  <FaSkullCrossbones  onClick={returnToList} className={inputCloseState ? 'input-close-button': 'input-close-button input-close-hidden'} />
+                  <input
+                    className="input"
+                    type="text"
+                    placeholder="Ex: Charmander"
+                    onChange={getInput}
+                    ref={input}
+                  ></input>
+                </div>
               </div>
             </form>
           </div>

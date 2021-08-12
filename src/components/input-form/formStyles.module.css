@@ -154,6 +154,19 @@
   align-items: center;
 }
 
+.input-close-button{
+  position: absolute;
+  left: 18rem;
+  top: 3rem;
+  font-size: var(--one-point-four);
+  font-weight: 900;
+  color: var(--navActive);
+}
+
+.input-close-hidden{
+  display: none;
+}
+
 .form .text,
 .form .input,
 .form .button {
@@ -186,15 +199,6 @@
   text-decoration: none;
 }
 
-.form .button {
-  width: 8rem;
-  height: 2.5rem;
-  border-radius: 10px;
-  border-style: none;
-  color: var(--WhiteColor);
-  font-weight: 900;
-  background: var(--buttonBlue);
-}
 
 .pokemonimg {
   display: none;
@@ -224,4 +228,10 @@
     flex-direction: column;
     align-items: center;
   }
+  .input-close-button{
+    position: absolute;
+    left: 13rem;
+    top: 7rem;
+  }
+  
 }
