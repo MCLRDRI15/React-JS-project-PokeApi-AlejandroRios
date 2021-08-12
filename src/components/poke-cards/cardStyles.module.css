@@ -17,11 +17,13 @@
   text-decoration: none;
   list-style: none;
 }
+
 .card:hover {
   box-shadow: var(--borderBoxHover);
   background: var(--cardHover);
   transition: all 0.5s ease-in;
 }
+
 .pokemon-names {
   position: relative;
   top: 0.9rem;
@@ -29,16 +31,19 @@
   width: 100%;
   background: var(--generalBlueColor);
 }
+
 .pokemon-name-span{
   color: var(--backgroundCard);
   font-weight: 700;
   text-decoration: none;
 }
+
 .images {
   object-fit: cover;
   height: 9.5rem;
   width: 100%;
 }
+
 @media (max-width: 480px) {
   .card {
     margin: auto;
@@ -49,6 +54,7 @@
     border: 2px solid var(--generalBlueColor);
     box-shadow: var(--borderBoxShadow);
   }
+
   .pokemon-names {
     position: relative;
     top: 3.3rem;
@@ -56,6 +62,7 @@
     width: 100%;
     text-align: center;
   }
+  
   .images {
     object-fit: cover;
     height: 13rem;

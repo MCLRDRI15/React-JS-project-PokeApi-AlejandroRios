@@ -25,6 +25,7 @@
   top: 0;
   z-index: 3;
 }
+
 .header {
   position: sticky;
   top: 0;
@@ -35,6 +36,7 @@
   background: var(--HeaderBackground);
   box-shadow: var(--HeaderBoxshadow);
 }
+
 .text-tittle {
   display: block;
   margin: 0rem 0rem 0rem 2rem;
@@ -42,6 +44,7 @@
   width: 15rem;
   height: 7rem;
 }
+
 .routes {
   position: relative;
   left: 4.5rem;
@@ -51,35 +54,44 @@
   justify-content: space-between;
   align-content: center;
 }
+
 .linkColor {
   text-decoration: none;
   font-weight: 600;
   font-size: var(--one-point-cero-two);
   color: var(--linkColor);
 }
+
 .linkColor:hover {
   color: var(--WhiteColor);
 }
+
 .navActive {
   color: var(--navActive);
 }
+
 .hamburguer-icon {
   display: none;
 }
+
 @media (max-width: 850px) {
   .text-tittle {
     margin: auto;
   }
+
   .routes {
     top: 0.2rem;
     left: 0.5rem;
   }
+
   .principal-tittle {
     margin: auto;
   }
+
   .header {
     flex-direction: column;
   }
+
   .container {
     margin: auto;
     position: absolute;
@@ -88,6 +100,7 @@
     height: 0;
     transition: 0.5s all ease-in;
   }
+
   .container-active {
     margin: auto;
     position: absolute;
@@ -96,6 +109,7 @@
     height: 100%;
     transition: 0.5s all ease-in;
   }
+
   .hamburguer-icon {
     display: block;
     position: relative;
@@ -105,17 +119,21 @@
     font-size: var(--one-point-five);
     color: var(--linkColor);
   }
+
   .hamburguer-icon:hover {
     color: var(--WhiteColor);
   }
+
   .hamburguer-active {
     color: var(--navActive);
   }
 }
+
 .search {
   margin: 1rem 3rem 0rem 5rem;
   text-align: center;
 }
+
 .container {
   position: relative;
   display: flex;
@@ -123,21 +141,25 @@
   justify-content: space-between;
   align-items: center;
 }
+
 .form {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 .input-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 .form .text,
 .form .input,
 .form .button {
   margin-bottom: 0.6rem;
 }
+
 .container .text {
   margin-bottom: 0.3rem;
   color: var(--WhiteColor);
@@ -145,6 +167,7 @@
   font-size: var(--one-point-four);
   font-weight: 700;
 }
+
 .form .input {
   margin-right: 1rem;
   width: 15rem;
@@ -154,6 +177,7 @@
   color: var(--SecondaryBlue);
   font-weight: 600;
 }
+
 ::placeholder {
   position: relative;
   left: 1rem;
@@ -161,6 +185,7 @@
   opacity: 0.6;
   text-decoration: none;
 }
+
 .form .button {
   width: 8rem;
   height: 2.5rem;
@@ -170,10 +195,12 @@
   font-weight: 900;
   background: var(--buttonBlue);
 }
+
 .pokemonimg {
   display: none;
   visibility: hidden;
 }
+
 .pokemonimg-active {
   position: relative;
   display: block;

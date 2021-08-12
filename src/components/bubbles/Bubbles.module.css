@@ -14,6 +14,7 @@
   bottom: -150px;
   animation: bubbles 3s linear infinite;
 }
+
 .bubble-one {
   width: 10px;
   height: 10px;
@@ -23,6 +24,7 @@
   animation-duration: 3s;
   animation-delay: 2s;
 }
+
 .bubble-two {
   width: 10px;
   height: 10px;
@@ -32,6 +34,7 @@
   animation-duration: 3s;
   animation-delay: 1s;
 }
+
 .bubble-three {
   width: 10px;
   height: 10px;
@@ -41,6 +44,7 @@
   animation-duration: 3s;
   animation-delay: 2s;
 }
+
 .bubble-four {
   width: 15px;
   height: 15px;
@@ -50,6 +54,7 @@
   animation-duration: 2s;
   animation-delay: 1s;
 }
+
 .bubble-five {
   width: 25px;
   height: 25px;
@@ -59,6 +64,7 @@
   animation-duration: 4s;
   animation-delay: 2s;
 }
+
 .bubble-six {
   width: 15px;
   height: 15px;
@@ -68,6 +74,7 @@
   animation-duration: 3s;
   animation-delay: 1s;
 }
+
 .bubble-seven {
   width: 10px;
   height: 10px;
@@ -77,6 +84,7 @@
   animation-duration: 2s;
   animation-delay: 2s;
 }
+
 .bubble-eight {
   width: 15px;
   height: 15px;
@@ -86,6 +94,7 @@
   animation-duration: 4s;
   animation-delay: 1s;
 }
+
 .bubble-nine {
   width: 10px;
   height: 10px;
@@ -95,6 +104,7 @@
   animation-duration: 3s;
   animation-delay: 1s;
 }
+
 .bubble-ten {
   width: 15px;
   height: 15px;
@@ -104,6 +114,7 @@
   animation-duration: 2s;
   animation-delay: 3s;
 }
+
 .bubble-eleven {
   width: 10px;
   height: 10px;
@@ -113,6 +124,7 @@
   animation-duration: 3s;
   animation-delay: 1s;
 }
+
 .bubble-twelve {
   width: 15px;
   height: 15px;
@@ -122,6 +134,7 @@
   animation-duration: 2s;
   animation-delay: 3s;
 }
+
 .bubble-thirteen {
   width: 10px;
   height: 10px;
@@ -131,6 +144,7 @@
   animation-duration: 3s;
   animation-delay: 2s;
 }
+
 .bubble-fourteen {
   width: 15px;
   height: 15px;
@@ -141,6 +155,7 @@
   animation-delay: 3s;
 
 }
+
 .bubble-fifteen {
   width: 10px;
   height: 10px;
@@ -150,6 +165,7 @@
   animation-duration: 4s;
   animation-delay: 2s;
 }
+
 .bubble-sixteen {
   width: 15px;
   height: 15px;
@@ -159,6 +175,7 @@
   animation-duration: 4s;
   animation-delay: 1s;
 }
+
 .bubble-seventeen {
   width: 10px;
   height: 10px;
@@ -168,6 +185,7 @@
   animation-duration: 4s;
   animation-delay: 2s;
 }
+
 .bubble-eighteen {
   width: 10px;
   height: 10px;
@@ -177,6 +195,7 @@
   animation-duration: 4s;
   animation-delay: 1s;
 }
+
 .bubble-nineteen {
   width: 15px;
   height: 15px;
@@ -187,6 +206,7 @@
   animation-delay: 2s;
  
 }
+
 .bubble-twenty {
   width: 15px;
   height: 15px;
@@ -196,6 +216,7 @@
   animation-duration: 4s;
   animation-delay: 1s;
 }
+
 @keyframes bubbles {
   0% {
     bottom: 0;
