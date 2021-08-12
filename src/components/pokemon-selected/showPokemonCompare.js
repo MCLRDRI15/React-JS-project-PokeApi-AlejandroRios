@@ -1,7 +1,7 @@
 import React from "react";
 import DobleCharts from "../charts-compare-folder/ChartsCompare";
 import ScrollLock from 'react-scrolllock';
-import "./pokemonCompare.module.css";
+import "./PokemonCompare.module.css";
 
 const ShowPokemonCompare = ({
   pokemonInPokeball,

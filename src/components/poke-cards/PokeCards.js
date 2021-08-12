@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { setShow } from "../../redux/actions/SingleView";
 import { addSelectedPokemon } from "../../redux/actions/PokemonActions";
 import { POKEAPI, IMAGES_FOLDER } from "../../pages";
-import "./cardStyles.module.css";
+import "./CardStyles.module.css";
 
 const PokemonCard = ({
   name,

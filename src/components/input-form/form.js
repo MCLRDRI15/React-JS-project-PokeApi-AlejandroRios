@@ -6,8 +6,7 @@ import gengar from "../img-folder/gengar-s.gif";
 import { addSearch, returnToList } from "../../redux/actions/PokemonActions";
 import CompareArea from "../little-chart/CompareArea";
 import tittle from "../img-folder/tittle.png";
-
-import "./formStyles.module.css";
+import "./FormStyles.module.css";
 
 const Form = ({ addSearch, pokemonSecondary }) => {
   const input = useRef();
@@ -27,7 +26,7 @@ const Form = ({ addSearch, pokemonSecondary }) => {
         <div className="principal-tittle">
           <img className="text-tittle" src={tittle} alt="POKEMON" />
           <div className="routes">
-            <NavLink to="/" activeClassName="navActive" className="linkColor">
+            <NavLink to="/" activeClassName="navActive" className="link-color">
               PokéApp
             </NavLink>
             <NavLink
@@ -35,7 +34,7 @@ const Form = ({ addSearch, pokemonSecondary }) => {
               to="/pokemons"
               exact
               activeClassName="navActive"
-              className="linkColor"
+              className="link-color"
             >
               Pokemons
             </NavLink>

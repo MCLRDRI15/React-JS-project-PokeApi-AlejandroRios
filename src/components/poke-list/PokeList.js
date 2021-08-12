@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { fetchRequest, handlerFetch } from "../../redux/actions/PokemonActions";
 import PokemonCard from "../poke-cards/PokeCards";
 import ViewMode from "../pokemon-selected/viewMode";
-import "./pokelist.module.css";
+import "./Pokelist.module.css";
 
 const pokelist = ({ pokemonsList, fetchRequest, handlerFetch, counter }) => {
   useEffect(() => {

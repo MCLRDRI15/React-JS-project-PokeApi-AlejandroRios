@@ -16,7 +16,7 @@ const Home = () => {
               <NavLink
                 className="home-button"
                 to="/pokemons"
-                activeClassName="navActive"
+                activeClassName="nav-active"
               >
                 Find pokemons
               </NavLink>

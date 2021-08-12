@@ -55,14 +55,14 @@
   align-content: center;
 }
 
-.linkColor {
+.link-color {
   text-decoration: none;
   font-weight: 600;
   font-size: var(--one-point-cero-two);
   color: var(--linkColor);
 }
 
-.linkColor:hover {
+.link-color:hover {
   color: var(--WhiteColor);
 }
 

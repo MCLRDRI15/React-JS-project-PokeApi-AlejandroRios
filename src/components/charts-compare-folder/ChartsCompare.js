@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import Chart from "chart.js";
-import "./chartsCompare.module.css";
+import "./ChartsCompare.module.css";
 
 const DobleCharts = ({ stats, bases, name, color, bases2, name2, color2 }) => {
   const chartRef = useRef();

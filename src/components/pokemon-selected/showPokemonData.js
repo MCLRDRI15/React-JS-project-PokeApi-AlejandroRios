@@ -1,7 +1,7 @@
 import React from "react";
 import Charts from "../charts-folder/Charts";
 import ScrollLock from 'react-scrolllock';
-import "./pokemonSelected.module.css";
+import "./PokemonSelected.module.css";
 
 const ShowPokemonData = ({
   keepPokemon,
@@ -13,7 +13,7 @@ const ShowPokemonData = ({
     <div className={singleView ? "container-chart" : "hidden"}>
       <ScrollLock isActive={singleView}> 
       <div className="pokecard-container">
-        <div className="headerChart">
+        <div className="header-chart">
           {pokemonInPokeball.map((pokemon, index = 1) => {
             return (
               <div key={index + Math.random()} className="comparison-area">
@@ -22,7 +22,7 @@ const ShowPokemonData = ({
                   Compare with...
                 </button>
                 <button
-                  className="closeChartButton"
+                  className="close-chart-button"
                   onClick={cleanPokemonArray}
                 >
                   X
@@ -31,7 +31,7 @@ const ShowPokemonData = ({
             );
           })}
         </div>
-        <div className="bodyChart">
+        <div className="body-chart">
           {pokemonInPokeball.map((pokemon, index = 1) => {
             return (
               <div
