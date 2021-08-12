@@ -93,7 +93,7 @@ function pokemons(state = initialState, action) {
         ...state,
         search: action.payload.search,
         isFetching: true,
-        pokemonsList: action.payload.pokemonsList.filter((pokemon) => pokemon.name.toLowerCase().includes(state.search.toLowerCase())),
+        pokemonsList: action.payload.pokemonsList
       };
 
     case RETURN_TO_ORIGINAL_LIST:

@@ -13,12 +13,9 @@ const Form = ({ addSearch, pokemonSecondary }) => {
   let [hamburguerState, hamburguerStylesHandler] = useState(false);
   let [inputCloseState, inputCloseHandler] = useState(false);
   const getInput = (inputEvent) => {
-    if (inputEvent.target.value === "") {
-      returnToList(pokemonSecondary);
-    } else {
       addSearch(inputEvent.target.value, pokemonSecondary);
       setTimeout( inputCloseHandler(!inputCloseState), 5000);
-    }
+ 
   };
 
   return (

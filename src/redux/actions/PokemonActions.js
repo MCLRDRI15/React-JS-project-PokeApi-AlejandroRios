@@ -115,7 +115,9 @@ export const addSearch = (search, pokemonsArrayIn) => ({
   type: ADD_SEARCH,
   payload: {
     search,
-    pokemonsList: pokemonsArrayIn
+    pokemonsList: pokemonsArrayIn.filter(
+      (pokemon) => pokemon.name.toLowerCase().includes(
+        search.toLowerCase()))
   },
 });
 

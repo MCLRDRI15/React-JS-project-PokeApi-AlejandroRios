@@ -18,7 +18,7 @@ const ShowPokemonData = ({
             return (
               <div key={index + Math.random()} className="comparison-area">
                 {String(pokemon.name).toUpperCase()}
-                <button className="compareButton" onClick={keepPokemon}>
+                <button className="compare-button" onClick={keepPokemon}>
                   Compare with...
                 </button>
                 <button

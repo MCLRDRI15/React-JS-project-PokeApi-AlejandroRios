@@ -18,9 +18,6 @@
   --cero-point-nine-size: 0.9rem;
 }
 
-.bodyChart{
-  overflow: scroll;
-}
 
 .versus-names {
   padding: 0.5rem;
@@ -32,15 +29,13 @@
 
 .pokecard-compare-container {
   background: var(--cardBackground);
-  margin: 1rem 0rem 3rem 0rem;
+  margin: 1rem auto 4rem auto;
   padding: 1rem;
   width: 40%;
   border-radius: 10px;
   border: 2px solid var(--border-black-color);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  overflow: scroll;
+  overflow: auto;
+  cursor: auto;
 }
 
 @media screen and (max-width: 400px) {
@@ -93,6 +88,7 @@
 
 .images-box {
   margin: auto;
+  width: 70%;
   display: flex;
   align-content: space-between;
   align-items: center;
@@ -104,15 +100,14 @@
 }
 
 .compare-container-chart {
-  width: 100%;
+  width: 100vw;
+  height: 100%;
   position: fixed;
   top: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   z-index: 3;
   background-color: var(--greyColor);
-  overflow: scrollbox;
+  overflow: auto;
+  cursor: pointer;
 }
 
 .pokemons-compare-data {

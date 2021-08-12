@@ -20,7 +20,7 @@ const ShowPokemonCompare = ({
           X
         </button>
       </div>
-      <div className="bodyChart">
+      <div className="body-chart">
         <div className="images-box">
           <img
             src={`${pokemonInPokeball[0].image}`}
