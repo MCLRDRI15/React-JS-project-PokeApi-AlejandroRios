@@ -1,8 +1,8 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import "./Home.module.css";
 import charizard from "../img-folder/charizard.gif";
 import ivysaur from "../img-folder/ivysaur.gif";
+import "./Home.module.css";
 
 const Home = () => {
   return (

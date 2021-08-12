@@ -1,4 +1,4 @@
-import { SET_SHOW } from "../Actions/singleView";
+import { SET_SHOW } from "../actions/SingleView";
 
 const initialState = {
   showWindow: false,

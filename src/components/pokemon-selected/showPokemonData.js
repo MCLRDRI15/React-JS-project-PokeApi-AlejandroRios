@@ -1,17 +1,17 @@
 import React from "react";
-import "./pokemonSelected.module.css";
-import Charts from "../chartsFolder/charts";
+import Charts from "../charts-folder/Charts";
 import ScrollLock from 'react-scrolllock';
+import "./pokemonSelected.module.css";
 
 const ShowPokemonData = ({
   keepPokemon,
   pokemonInPokeball,
-  SingleView,
+  singleView,
   cleanPokemonArray,
 }) => {
   return (
-    <div className={SingleView ? "container-chart" : "hidden"}>
-      <ScrollLock isActive={SingleView}> 
+    <div className={singleView ? "container-chart" : "hidden"}>
+      <ScrollLock isActive={singleView}> 
       <div className="pokecard-container">
         <div className="headerChart">
           {pokemonInPokeball.map((pokemon, index = 1) => {

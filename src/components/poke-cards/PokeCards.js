@@ -1,17 +1,16 @@
 import React from "react";
 import { connect } from "react-redux";
-import "./cardStyles.module.css";
-
-import { setShow } from "../../Redux/Actions/singleView";
-import { addSelectedPokemon } from "../../Redux/Actions/pokemonActions";
+import { setShow } from "../../redux/actions/SingleView";
+import { addSelectedPokemon } from "../../redux/actions/PokemonActions";
 import { POKEAPI, IMAGES_FOLDER } from "../../pages";
+import "./cardStyles.module.css";
 
 const PokemonCard = ({
   name,
   imageIndex,
   setShow,
   addSelectedPokemon,
-  SingleViewState,
+  singleViewState,
   url,
 }) => {
   const imageURL = `${IMAGES_FOLDER}${imageIndex}.png`;
@@ -26,7 +25,7 @@ const PokemonCard = ({
       url,
       `${POKEAPI}pokemon-species/${imageIndex}/`
     );
-    setShow(SingleViewState);
+    setShow(singleViewState);
   };
 
   return (
@@ -41,7 +40,7 @@ const PokemonCard = ({
 
 const mapStateToProps = (state) => {
   return {
-    SingleViewState: state.singleView.showWindow,
+    singleViewState: state.singleView.showWindow,
   };
 };
 

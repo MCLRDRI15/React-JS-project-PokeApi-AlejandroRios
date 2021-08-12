@@ -12,13 +12,11 @@
   top: 0;
   z-index: 10;
 }
-
 .littleChart-container {
   position: relative;
   opacity: 0.8;
   right: 1rem;
 }
-
 .name {
   width: 10rem;
   border: 1px solid var(--border-name);

@@ -1,17 +1,17 @@
 import React from "react";
-import "./pokemonCompare.module.css";
-import DobleCharts from "../chartsCompareFolder/chartsCompare";
+import DobleCharts from "../charts-compare-folder/ChartsCompare";
 import ScrollLock from 'react-scrolllock';
+import "./pokemonCompare.module.css";
 
 const ShowPokemonCompare = ({
   pokemonInPokeball,
-  ViewState,
+  viewState,
   cleanPokemonArray,
 }) => (
   <div
-    className={ViewState ? "compare-container-chart" : "hidden"}
+    className={viewState ? "compare-container-chart" : "hidden"}
   >
-    <ScrollLock isActive={ViewState}> 
+    <ScrollLock isActive={viewState}> 
     <div className="pokecard-compare-container">
       <div className="versus-names">
         {String(pokemonInPokeball[0].name).toUpperCase()} VS.{" "}

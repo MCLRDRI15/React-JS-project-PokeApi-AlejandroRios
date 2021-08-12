@@ -2,7 +2,7 @@ import logger from "redux-logger";
 import thunk from "redux-thunk";
 import { createStore, applyMiddleware } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
-import reducer from "./Reducers/globalindex";
+import reducer from "./reducers/GlobalIndex";
 
 const compose = composeWithDevTools({
   name: "App Pokemon",

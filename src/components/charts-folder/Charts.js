@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
-import "./Charts.module.css";
 import Chart from "chart.js";
+import "./Charts.module.css";
 
 const Charts = ({ stats, bases, name, color }) => {
   const chartRef = useRef();
@@ -36,7 +36,7 @@ const Charts = ({ stats, bases, name, color }) => {
   });
 
   return (
-    <div className="rectangle">
+    <div className="rectangles">
       <canvas ref={chartRef} width="300" height="300"></canvas>
     </div>
   );

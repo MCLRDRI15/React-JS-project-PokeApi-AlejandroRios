@@ -1,18 +1,24 @@
 import React, { useRef, useState } from "react";
 import { connect } from "react-redux";
-import "./formStyles.module.css";
 import { NavLink } from "react-router-dom";
-import tittle from "../img-folder/tittle.png";
 import { FaBars } from "react-icons/fa";
 import gengar from "../img-folder/gengar-s.gif";
-import { addSearch } from "../../Redux/Actions/pokemonActions";
-import CompareArea from "../littleChart/CompareArea";
+import { addSearch, returnToList } from "../../redux/actions/PokemonActions";
+import CompareArea from "../little-chart/CompareArea";
+import tittle from "../img-folder/tittle.png";
+
+import "./formStyles.module.css";
 
 const Form = ({ addSearch, pokemonSecondary }) => {
   const input = useRef();
-  let [booleanValue, hamburguerStylesHandler] = useState(false);
+  let [hamburguerState, hamburguerStylesHandler] = useState(false);
   const getInput = (inputEvent) => {
-    addSearch(inputEvent.target.value, pokemonSecondary);
+    if (inputEvent.target.value === ""){
+      returnToList(pokemonSecondary);
+    }else{
+      addSearch(inputEvent.target.value, pokemonSecondary);
+    }
+    
   };
 
   return (
@@ -36,7 +42,7 @@ const Form = ({ addSearch, pokemonSecondary }) => {
           </div>
           <div
             className="hamburguer"
-            onClick={() => hamburguerStylesHandler(!booleanValue)}
+            onClick={() => hamburguerStylesHandler(!hamburguerState)}
           >
             <FaBars className="hamburguer-icon" />
           </div>
@@ -44,7 +50,7 @@ const Form = ({ addSearch, pokemonSecondary }) => {
         <div className="search">
           <div
             className={
-              booleanValue ? "container container-active" : "container"
+              hamburguerState ? "container container-active" : "container"
             }
           >
             <label className="text">Look for a Pokemon:</label>

@@ -2,12 +2,12 @@ import React from "react";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Provider } from "react-redux";
-import store from "./Redux/store";
+import store from "./redux/store";
 
-import Form from "./components/input-form/form";
-import { Bubbles } from "./components/bubbles/bubbles";
-import Home from "./components/Home-page/Home";
-import Pokelist from "./components/pokeList/pokelist";
+import Form from "./components/input-form/Form";
+import { Bubbles } from "./components/bubbles/Bubbles";
+import Home from "./components/home-page/Home";
+import Pokelist from "./components/poke-list/PokeList";
 
 const App = () => {
   return (

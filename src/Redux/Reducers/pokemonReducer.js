@@ -6,8 +6,9 @@ import {
   ADD_SELECTED_POKEMON,
   CLEAN_SELECTED_POKEMON,
   SET_COMPARISON_CHART,
+  RETURN_TO_ORIGINAL_LIST,
   ADD_SEARCH,
-} from "../Actions/pokemonActions";
+} from "../actions/PokemonActions";
 
 const initialState = {
   pokemonsList: [],
@@ -19,9 +20,9 @@ const initialState = {
 
   next: null,
   previous: null,
-  Counter: 0,
+  counter: 0,
 
-  showchart: false,
+  showChart: false,
   search: "",
 };
 
@@ -59,7 +60,7 @@ function pokemons(state = initialState, action) {
     case HANDLER_POKEMONS_FETCH:
       return {
         ...state,
-        Counter: action.payload.counter,
+        counter: action.payload.counter,
       };
 
     case ADD_SELECTED_POKEMON:
@@ -84,7 +85,7 @@ function pokemons(state = initialState, action) {
     case SET_COMPARISON_CHART:
       return {
         ...state,
-        showchart: !state.showchart,
+        showChart: !state.showChart,
       };
 
     case ADD_SEARCH:
@@ -94,6 +95,12 @@ function pokemons(state = initialState, action) {
         isFetching: true,
         pokemonsList: action.payload.pokemonsList.filter((pokemon) => pokemon.name.toLowerCase().includes(state.search.toLowerCase())),
       };
+
+    case RETURN_TO_ORIGINAL_LIST:
+      return{
+        ...state,
+        pokemonsList: action.payload.pokemonSecondary.concat((pokemon) => pokemon.name.toLowerCase().includes(state.search.toLowerCase()))
+      }
 
 
     default:

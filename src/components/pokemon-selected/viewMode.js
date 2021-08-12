@@ -1,44 +1,44 @@
 import React from "react";
 import { connect } from "react-redux";
-import ShowPokemonData from "./showPokemonData";
-import { setShow } from "../../Redux/Actions/singleView";
-import { cleanSelectedPokemons } from "../../Redux/Actions/pokemonActions";
-import { setComparisonChart } from "../../Redux/Actions/pokemonActions";
-import ShowPokemonCompare from "./showPokemonCompare";
+import ShowPokemonData from "./ShowPokemonData";
+import { setShow } from "../../redux/actions/SingleView";
+import { cleanSelectedPokemons } from "../../redux/actions/PokemonActions";
+import { setComparisonChart } from "../../redux/actions/PokemonActions";
+import ShowPokemonCompare from "./ShowPokemonCompare";
 
 const ViewMode = ({
   setShow,
-  ViewState,
-  PokemonInPokeball,
+  viewState,
+  pokemonInPokeball,
   cleanSelectedPokemons,
   setComparisonChart,
-  showchart,
+  showChart,
 }) => {
   const cleanPokemonArray = () => {
-    setShow(ViewState);
+    setShow(viewState);
     cleanSelectedPokemons();
-    if (showchart) {
+    if (showChart) {
       setComparisonChart();
     }
   };
 
   const keepPokemon = () => {
-    setShow(ViewState);
+    setShow(viewState);
     setComparisonChart();
   };
 
   return (
     <div>
-      {PokemonInPokeball.length > 1 && showchart ? (
+      {pokemonInPokeball.length > 1 && showChart ? (
         <ShowPokemonCompare
-          pokemonInPokeball={PokemonInPokeball}
-          ViewState={ViewState}
+          pokemonInPokeball={pokemonInPokeball}
+          viewState={viewState}
           cleanPokemonArray={cleanPokemonArray}
         />
       ) : (
         <ShowPokemonData
-          pokemonInPokeball={PokemonInPokeball}
-          SingleView={ViewState}
+          pokemonInPokeball={pokemonInPokeball}
+          singleView={viewState}
           cleanPokemonArray={cleanPokemonArray}
           keepPokemon={keepPokemon}
         />
@@ -49,9 +49,9 @@ const ViewMode = ({
 
 const mapStateToProps = (state) => {
   return {
-    ViewState: state.singleView.showWindow,
-    PokemonInPokeball: state.pokemons.pokemonInPokeball,
-    showchart: state.pokemons.showchart,
+    viewState: state.singleView.showWindow,
+    pokemonInPokeball: state.pokemons.pokemonInPokeball,
+    showChart: state.pokemons.showChart,
   };
 };
 

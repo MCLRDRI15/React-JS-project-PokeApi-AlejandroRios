@@ -17,7 +17,6 @@
   text-decoration: none;
   list-style: none;
 }
-
 .card:hover {
   box-shadow: var(--borderBoxHover);
   background: var(--cardHover);
@@ -35,13 +34,11 @@
   font-weight: 700;
   text-decoration: none;
 }
-
 .images {
   object-fit: cover;
   height: 9.5rem;
   width: 100%;
 }
-
 @media (max-width: 480px) {
   .card {
     margin: auto;

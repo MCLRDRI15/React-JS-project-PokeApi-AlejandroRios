@@ -15,7 +15,7 @@ export const ADD_SEARCH = "ADD_SEARCH";
 export const RETURN_TO_ORIGINAL_LIST = "RETURN_TO_ORIGINAL_LIST";
 
 /* Function that brings pokemons data from API URL */
-export const FetchRequest = (counter) => (dispatch) => {
+export const fetchRequest = (counter) => (dispatch) => {
   const url = `${POKEAPI}pokemon?offset=${counter}&limit=20`;
 
   dispatch({ type: FETCH_POKEMONS_REQUEST });
@@ -40,7 +40,7 @@ export const FetchRequest = (counter) => (dispatch) => {
 };
 
 /* function that handle the number of pokemons in the list which are called from the API */
-export const HandlerFetch = (pokemonsInList) => (dispatch) => {
+export const handlerFetch = (pokemonsInList) => (dispatch) => {
   dispatch({
     type: HANDLER_POKEMONS_FETCH,
     payload: {
@@ -101,11 +101,11 @@ export const cleanSelectedPokemons = () => (dispatch) => {
 };
 
 /* function that allows to enable the comparison chart */
-export const setComparisonChart = (showchart) => (dispatch) => {
+export const setComparisonChart = (showChart) => (dispatch) => {
   dispatch({
     type: SET_COMPARISON_CHART,
     payload: {
-      actualState: showchart,
+      actualState: showChart,
     },
   });
 };
@@ -120,11 +120,10 @@ export const addSearch = (search, pokemonsArrayIn) => ({
 });
 
 /* This function assigns the original array of pokemons to the list */
-export const returnToList = () => (dispatch) => {
-  dispatch({
-    type: RETURN_TO_ORIGINAL_LIST,
-    payload: {
-      pokemonsList: [],
-    },
-  });
-};
+export const returnToList = (pokemonSecondary) => ({
+  type: ADD_SEARCH,
+  payload: {
+    pokemonsSecondary: pokemonSecondary
+  },
+});
+  

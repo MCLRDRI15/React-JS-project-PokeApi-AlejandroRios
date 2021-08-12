@@ -1,21 +1,21 @@
 import React, { useEffect } from "react";
-import "./pokelist.module.css";
 import { connect } from "react-redux";
-import { FetchRequest, HandlerFetch } from "../../Redux/Actions/pokemonActions";
-import PokemonCard from "../pokecards/pokecards";
+import { fetchRequest, handlerFetch } from "../../redux/actions/PokemonActions";
+import PokemonCard from "../poke-cards/PokeCards";
 import ViewMode from "../pokemon-selected/viewMode";
+import "./pokelist.module.css";
 
-const pokelist = ({ pokemonsList, FetchRequest, HandlerFetch, Counter }) => {
+const pokelist = ({ pokemonsList, fetchRequest, handlerFetch, counter }) => {
   useEffect(() => {
-    FetchRequest(Counter);
-  }, [FetchRequest, Counter]);
+    fetchRequest(counter);
+  }, [fetchRequest, counter]);
 
   window.onscroll = () => {
     if (
       window.innerHeight + document.documentElement.scrollTop ===
       document.documentElement.offsetHeight
     ) {
-      HandlerFetch(Counter);
+      handlerFetch(counter);
     }
   };
 
@@ -40,15 +40,15 @@ const pokelist = ({ pokemonsList, FetchRequest, HandlerFetch, Counter }) => {
 
 const mapStateToProps = (state) => {
   return {
-    Counter: state.pokemons.Counter,
+    counter: state.pokemons.counter,
     pokemonsList: state.pokemons.pokemonsList,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    FetchRequest: (url) => dispatch(FetchRequest(url)),
-    HandlerFetch: (Counter) => dispatch(HandlerFetch(Counter)),
+    fetchRequest: (url) => dispatch(fetchRequest(url)),
+    handlerFetch: (counter) => dispatch(handlerFetch(counter)),
   };
 };
 

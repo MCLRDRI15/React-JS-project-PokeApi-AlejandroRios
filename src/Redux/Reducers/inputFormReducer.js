@@ -1,4 +1,4 @@
-import { ADD_SEARCH } from "../Actions/inputFormActions";
+import { ADD_SEARCH } from "../actions/InputFormActions";
 
 const inisialState = {
   search: "",

@@ -7,7 +7,6 @@
   justify-content: center;
   gap: 1.5rem;
 }
-
 @media screen and (max-width: 1200px) and (min-width: 481px) {
   .pokelist-section {
     margin: auto;
@@ -17,7 +16,6 @@
     gap: 1.5rem;
   }
 }
-
 @media (max-width: 480px) {
   .pokelist-section {
     margin: auto;

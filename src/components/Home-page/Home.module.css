@@ -26,7 +26,6 @@
   grid-template-columns: 30% 40% 30%;
   align-items: center;
 }
-
 .button-text-controller {
   margin: auto;
   width: 18rem;
@@ -35,7 +34,6 @@
   background: var(--BlueButtonColor);
   text-align: center;
 }
-
 .home-button {
   position: relative;
   top: 0.7rem;
@@ -46,7 +44,6 @@
   color: var(--WhiteColor);
   font-weight: 800;
 }
-
 .button-text-controller:hover > .home-button {
   color: var(--BlueColor);
 }
@@ -55,7 +52,6 @@
   color: var(--BlueColor);
   border: 1px solid var(--BlueColor);
 }
-
 .charizard {
   margin-left: 2rem;
   width: 300px;
@@ -66,12 +62,10 @@
   width: 300px;
   height: auto;
 }
-
 .text-muted {
   margin-top: 6.5rem;
   text-align: center;
 }
-
 @media (max-width: 1030px) {
   .pokemons-gif {
     margin: auto;
@@ -86,7 +80,6 @@
     margin-bottom: 1rem;
   }
 }
-
 @media (max-width: 400px) {
   .charizard {
     margin: auto;
