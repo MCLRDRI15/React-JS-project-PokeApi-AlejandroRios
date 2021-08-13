@@ -1,0 +1,235 @@
+/* Bubbles */
+:root {
+  --bubble-color: #ffff;
+}
+
+.bubble {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--bubble-color);
+  opacity: 0.3;
+  position: fixed;
+  z-index: 10;
+  bottom: -150px;
+  animation: bubbles 3s linear infinite;
+}
+
+.bubble-one {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--bubble-color);
+  left: 5%;
+  animation-duration: 3s;
+  animation-delay: 2s;
+}
+
+.bubble-two {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--bubble-color);
+  left: 18%;
+  animation-duration: 3s;
+  animation-delay: 1s;
+}
+
+.bubble-three {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--bubble-color);
+  left: 20%;
+  animation-duration: 3s;
+  animation-delay: 2s;
+}
+
+.bubble-four {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: var(--bubble-color);
+  left: 30%;
+  animation-duration: 2s;
+  animation-delay: 1s;
+}
+
+.bubble-five {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: var(--bubble-color);
+  left: 40%;
+  animation-duration: 4s;
+  animation-delay: 2s;
+}
+
+.bubble-six {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: var(--bubble-color);
+  left: 45%;
+  animation-duration: 3s;
+  animation-delay: 1s;
+}
+
+.bubble-seven {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--bubble-color);
+  left: 57%;
+  animation-duration: 2s;
+  animation-delay: 2s;
+}
+
+.bubble-eight {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: var(--bubble-color);
+  left: 63%;
+  animation-duration: 4s;
+  animation-delay: 1s;
+}
+
+.bubble-nine {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--bubble-color);
+  left: 59%;
+  animation-duration: 3s;
+  animation-delay: 1s;
+}
+
+.bubble-ten {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: var(--bubble-color);
+  left: 70%;
+  animation-duration: 2s;
+  animation-delay: 3s;
+}
+
+.bubble-eleven {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--bubble-color);
+  left: 78%;
+  animation-duration: 3s;
+  animation-delay: 1s;
+}
+
+.bubble-twelve {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: var(--bubble-color);
+  left: 70%;
+  animation-duration: 2s;
+  animation-delay: 3s;
+}
+
+.bubble-thirteen {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--bubble-color);
+  left: 84%;
+  animation-duration: 3s;
+  animation-delay: 2s;
+}
+
+.bubble-fourteen {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: var(--bubble-color);
+  left: 90%;
+  animation-duration: 2s;
+  animation-delay: 3s;
+
+}
+
+.bubble-fifteen {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--bubble-color);
+  left: 95%;
+  animation-duration: 4s;
+  animation-delay: 2s;
+}
+
+.bubble-sixteen {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: var(--bubble-color);
+  left: 10%;
+  animation-duration: 4s;
+  animation-delay: 1s;
+}
+
+.bubble-seventeen {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--bubble-color);
+  left: 50%;
+  animation-duration: 4s;
+  animation-delay: 2s;
+}
+
+.bubble-eighteen {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--bubble-color);
+  left: 40%;
+  animation-duration: 4s;
+  animation-delay: 1s;
+}
+
+.bubble-nineteen {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: var(--bubble-color);
+  left: 8%;
+  animation-duration: 3s;
+  animation-delay: 2s;
+ 
+}
+
+.bubble-twenty {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: var(--bubble-color);
+  left: 83%;
+  animation-duration: 4s;
+  animation-delay: 1s;
+}
+
+@keyframes bubbles {
+  0% {
+    bottom: 0;
+    opacity: 0.4;
+  }
+  30% {
+    transform: translateX(30px);
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    bottom: 100vh;
+    opacity: 0.25;
+  }
+}
