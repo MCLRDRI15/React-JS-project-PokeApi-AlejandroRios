@@ -20,8 +20,8 @@ const pokelist = ({ pokemonsList, fetchRequest, handlerFetch, counter }) => {
   };
 
   return (
-    <div className="pokelist-container">
-      <ul className="pokelist-section">
+    <div className="pokeList-container">
+      <ul className="pokeList-section">
         {pokemonsList.map((eachPokemon, index) => (
           <PokemonCard
             key={index + Math.random()}
