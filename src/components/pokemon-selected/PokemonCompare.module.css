@@ -1,5 +1,6 @@
 :root {
   --greyColor: #9c9c9c99;
+  --image-background: #e2e46d;
   --cardBackground: linear-gradient(
     to right,
     #d2d733,
@@ -22,6 +23,9 @@
 .versus-names {
   padding: 0.5rem;
   width: 100%;
+  display: flex;
+  align-content: space-between;
+  align-items: center;
   font-size: var(--one-point-two-size);
   font-weight: 800;
   border-bottom: 1px solid var(--border-black-color);
@@ -41,16 +45,52 @@
 @media screen and (max-width: 400px) {
   .pokecard-compare-container {
     width: 85%;
+    margin: 4rem auto 4rem auto;
   }
 
   .versus-names {
     font-size: var(--cero-point-nine-size);
   }
 
-  .central-dates .box {
+  .dates .box-compare-left{
+    margin-left: 2rem;
+  }
+
+  .dates .box-compare-right{
+    margin-right: 2rem;
+  }
+
+  .central-dates{
+    margin: 0;
+    padding: 0 3rem;
+  }
+
+  .battle-between{
+    padding: 0;
+  }
+
+  .central-dates .compare-data-information{
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  .compare-data-information{
     margin: auto;
-    font-weight: 500;
-    font-size: var(--one-point-one-size);
+  }
+  
+  .central-dates .box {
+    text-align: center;
+    padding: 0;
+    margin: 1rem 0 0rem 0;
+    font-weight: 700;
+    font-size: var(--one-point-three-size);
+    color: var(--text-red-color);
+  }
+
+  .dates{
+    margin-left: 0rem;
+    margin-right: 0rem;
   }
 
 }
@@ -76,9 +116,10 @@
 }
 
 .compare-close-button {
-  margin-left: 4rem;
+  margin-left: auto;
+  margin-right: 1.5rem;
   width: 2rem;
-  height: 2rem;
+  height: 2.2rem;
   font-weight: 900;
   border-radius: 5px;
   font-size: var(--one-point-one-size);
@@ -88,13 +129,18 @@
 
 .images-box {
   margin: auto;
-  width: 70%;
+  margin-top: 1rem;
+  width: 100%;
   display: flex;
   align-content: space-between;
   align-items: center;
+  background: var(--image-background);
+  border: 1px solid var(--general-white-color);
+  border-radius: 55px;
 }
 
 .image-compare {
+  margin: auto;
   width: 12rem;
   height: auto;
 }
@@ -111,26 +157,45 @@
 }
 
 .pokemons-compare-data {
+  background: var(--image-background);
+  border: 1px solid var(--general-white-color);
+  border-radius: 55px;
   width: 100%;
-  margin: 3rem  auto  1rem auto; 
+  margin: 1rem  auto  1rem auto; 
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
 }
 
 .central-dates {
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-weight: 800;
+  text-align: center;
+  font-weight: 700;
+}
+
+.box{
+  text-align: center;
+}
+
+.central-dates .compare-data-information{
+  text-align: center;
+  margin: 1rem 2rem 0rem 2rem;
 }
 
 .central-dates .box {
-  margin: 1rem 2rem 1rem 2rem;
+  text-align: center;
+  margin: 1rem 2rem 0rem 2rem;
   font-weight: 700;
   font-size: var(--one-point-three-size);
+  color: var(--text-red-color);
+}
+
+.versus{
+  font-size: var(--one-point-one-size);
+  font-weight: 700;
   color: var(--text-red-color);
 }
 
@@ -138,5 +203,24 @@
   margin: auto;
   margin-top: 1rem;
   margin-bottom: 1.5rem;
+  margin-right: 0rem;
+  margin-left: 1rem;
   display: flex;
+  align-content: space-between;
+  gap: 1rem;
+}
+
+.battle-between{
+  display: flex;
+  align-content: space-between;
+}
+
+.dates-comparing{
+  display: flex;
+  flex-direction: column;
+}
+
+.text-between{
+  display: flex;
+  flex-direction: column;
 }

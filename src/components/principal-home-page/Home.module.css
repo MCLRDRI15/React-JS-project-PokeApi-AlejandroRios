@@ -89,6 +89,9 @@
   }
 }
 @media (max-width: 400px) {
+  .welcome{
+    text-align: center;
+  }
   .charizard {
     margin: auto;
     width: 200px;

@@ -1,5 +1,6 @@
 import React from "react";
 import Charts from "../charts-show-folder/Charts";
+import {FaSkullCrossbones } from "react-icons/fa";
 import ScrollLock from 'react-scrolllock';
 import "./PokemonSelected.module.css";
 
@@ -25,7 +26,7 @@ const ShowPokemonData = ({
                   className="close-chart-button"
                   onClick={cleanPokemonArray}
                 >
-                  X
+                  <FaSkullCrossbones/>
                 </button>
               </div>
             );
@@ -56,8 +57,8 @@ const ShowPokemonData = ({
                       <span className="box">Gender</span>
                     </div>
                     <div className="show-data">
-                      <span className="box">{pokemon.height}m</span>
-                      <span className="box">{pokemon.weight}kg</span>
+                      <span className="box">{pokemon.height/10}m</span>
+                      <span className="box">{pokemon.weight/10}kg</span>
                       <span className="box">{pokemonInPokeball[0].gender}</span>
                     </div>
                     <div className="flex-informations">
