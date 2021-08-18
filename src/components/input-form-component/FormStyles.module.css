@@ -42,7 +42,7 @@
   margin: 0rem 0rem 0rem 2rem;
   padding: 0.5rem;
   width: 15rem;
-  height: 7rem;
+  height: 6rem;
 }
 
 .routes {
@@ -96,7 +96,7 @@
     margin: auto;
     position: absolute;
     width: 100%;
-    left: -170%;
+    left: -190%;
     height: 0;
     transition: 0.5s all ease-in;
   }

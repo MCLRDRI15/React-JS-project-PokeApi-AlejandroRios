@@ -1,5 +1,6 @@
 import React from "react";
 import DobleCharts from "../charts-show-compare-folder/ChartsCompare";
+import {FaSkullCrossbones } from "react-icons/fa";
 import ScrollLock from 'react-scrolllock';
 import "./PokemonCompare.module.css";
 
@@ -14,10 +15,10 @@ const ShowPokemonCompare = ({
     <ScrollLock isActive={viewState}> 
     <div className="pokecard-compare-container">
       <div className="versus-names">
-        {String(pokemonInPokeball[0].name).toUpperCase()} VS.{" "}
+        {String(pokemonInPokeball[0].name).toUpperCase()} VS.
         {String(pokemonInPokeball[1].name).toUpperCase()}
         <button className="compare-close-button" onClick={cleanPokemonArray}>
-          X
+          <FaSkullCrossbones/>
         </button>
       </div>
       <div className="body-chart">
@@ -27,6 +28,7 @@ const ShowPokemonCompare = ({
             className="image-compare"
             alt="pokemons"
           />
+          <span className="versus">VS</span>
           <img
             src={`${pokemonInPokeball[1].image}`}
             className="image-compare"
@@ -35,9 +37,23 @@ const ShowPokemonCompare = ({
         </div>
         <div className="pokemons-compare-data">
           <div className="central-dates">
-            <span>{pokemonInPokeball[0].height}m  <strong className="box">Height</strong>   {pokemonInPokeball[1].height}m</span>
-            <span>{pokemonInPokeball[0].weight}kg <strong className="box">Weight </strong>  {pokemonInPokeball[1].weight}kg</span>
-            <span>{pokemonInPokeball[0].gender}   <strong className="box">Gender</strong>   {pokemonInPokeball[1].gender}</span>
+            <div className="battle-between">
+              <div className="dates-comparing">
+            <span className="compare-data-information">{pokemonInPokeball[0].height/10}m </span>
+            <span className="compare-data-information">{pokemonInPokeball[0].weight/10}kg</span>
+            <span className="compare-data-information">{pokemonInPokeball[0].gender}</span>
+            </div>
+            <div className="text-between">
+            <strong className="box">Height</strong>  
+            <strong className="box">Weight </strong> 
+            <strong className="box">Gender</strong> 
+            </div>
+            <div className="dates-comparing">
+            <span className="compare-data-information">{pokemonInPokeball[1].height/10}m</span>
+            <span className="compare-data-information">{pokemonInPokeball[1].weight/10}kg</span>
+            <span className="compare-data-information">{pokemonInPokeball[1].gender}</span>
+            </div>
+            </div>
             <div className="dates">
             <span className="box-compare-left">
               {pokemonInPokeball[0].abilities.map((abilities) => {
