@@ -8,12 +8,12 @@ import CompareArea from "../little-chart-compare/CompareArea";
 import tittle from "../img-folder/tittle.png";
 import "./FormStyles.module.css";
 
-const Form = ({ addSearch, pokemonSecondary }) => {
+const Form = (props) => {
   const input = useRef();
   let [hamburguerState, hamburguerStylesHandler] = useState(false);
   let [inputCloseState, inputCloseHandler] = useState(false);
   const getInput = (inputEvent) => {
-      addSearch(inputEvent.target.value, pokemonSecondary);
+      props.addSearch(inputEvent.target.value, props.state.pokemons.pokemonSecondary);
       setTimeout( inputCloseHandler(!inputCloseState), 5000);
  
   };
@@ -37,13 +37,16 @@ const Form = ({ addSearch, pokemonSecondary }) => {
               Pokemons
             </NavLink>
           </div>
+          {props.isHamburguerActive && (
           <div
             className="hamburguer"
             onClick={() => hamburguerStylesHandler(!hamburguerState)}
           >
             <FaBars className="hamburguer-icon" />
           </div>
+          )}
         </div>
+        {props.isSeachActive && (
         <div className="search">
           <div
             className={
@@ -68,6 +71,7 @@ const Form = ({ addSearch, pokemonSecondary }) => {
             </form>
           </div>
         </div>
+        )}
       </header>
       <CompareArea />
     </div>
@@ -76,14 +80,14 @@ const Form = ({ addSearch, pokemonSecondary }) => {
 
 const mapStateToProps = (state) => {
   return {
-    pokemonSecondary: state.pokemons.pokemonSecondary,
+    state
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
     addSearch: (search, pokemonSecondary) =>
-      dispatch(addSearch(search, pokemonSecondary)),
+      dispatch(addSearch(search, pokemonSecondary )),
   };
 };
 

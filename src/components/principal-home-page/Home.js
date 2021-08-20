@@ -3,10 +3,12 @@ import { NavLink } from "react-router-dom";
 import charizard from "../img-folder/charizard.gif";
 import ivysaur from "../img-folder/ivysaur.gif";
 import "./Home.module.css";
+import Form from "../input-form-component/Form"
 
 const Home = () => {
   return (
     <div>
+      <Form isSeachActive={false} isHamburguerActive={false}/>
       <div className="text-center">
         <section className="section">
           <h1 className="welcome">Welcome to PokéApp</h1>

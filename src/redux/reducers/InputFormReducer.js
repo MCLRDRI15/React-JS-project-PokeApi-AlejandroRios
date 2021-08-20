@@ -3,6 +3,7 @@ import { ADD_SEARCH } from "../actions/InputFormActions";
 const inisialState = {
   search: "",
   isFetching: false,
+  isSearchActive: false,
 };
 
 function searchPokemon(state = inisialState, action) {
