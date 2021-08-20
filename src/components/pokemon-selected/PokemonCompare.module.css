@@ -221,16 +221,14 @@
 
 .box-compare-left{
   position: relative;
-  right: 7rem;
+  right: 8rem;
   top: 4rem;
 }
 
 .box-compare-right{
   position: relative;
-  left: 7rem;
+  left: 8rem;
   bottom: 2.5rem;
-  align-content: center;
-  text-align: center;
 }
 
 .battle-between{
