@@ -39,9 +39,9 @@ const ShowPokemonCompare = ({
           <div className="central-dates">
             <div className="battle-between">
               <div className="dates-comparing">
-            <span className="compare-data-information">{pokemonInPokeball[0].height/10}m </span>
-            <span className="compare-data-information">{pokemonInPokeball[0].weight/10}kg</span>
-            <span className="compare-data-information">{pokemonInPokeball[0].gender}</span>
+            <span className="compare-data-information-left">{pokemonInPokeball[0].height/10}m </span>
+            <span className="compare-data-information-left">{pokemonInPokeball[0].weight/10}kg</span>
+            <span className="compare-data-information-left">{pokemonInPokeball[0].gender}</span>
             </div>
             <div className="text-between">
             <strong className="box">Height</strong>  
@@ -49,11 +49,11 @@ const ShowPokemonCompare = ({
             <strong className="box">Gender</strong> 
             </div>
             <div className="dates-comparing">
-            <span className="compare-data-information">{pokemonInPokeball[1].height/10}m</span>
-            <span className="compare-data-information">{pokemonInPokeball[1].weight/10}kg</span>
-            <span className="compare-data-information">{pokemonInPokeball[1].gender}</span>
+            <span className="compare-data-information-right">{pokemonInPokeball[1].height/10}m</span>
+            <span className="compare-data-information-right">{pokemonInPokeball[1].weight/10}kg</span>
+            <span className="compare-data-information-right">{pokemonInPokeball[1].gender}</span>
             </div>
-            </div>
+            
             <div className="dates">
             <span className="box-compare-left">
               {pokemonInPokeball[0].abilities.map((abilities) => {
@@ -74,6 +74,7 @@ const ShowPokemonCompare = ({
                 );
               })}
             </span>
+          </div>
           </div>
           </div>
         </div>

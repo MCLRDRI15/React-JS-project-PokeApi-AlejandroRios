@@ -180,14 +180,25 @@
   text-align: center;
 }
 
-.central-dates .compare-data-information{
+.central-dates .compare-data-information-left{
+  position: relative;
+  right: 6rem;
+  top: 6.5rem;
   text-align: center;
-  margin: 1rem 2rem 0rem 2rem;
+  margin: 1rem 0rem 0rem 0rem;
+}
+
+.central-dates .compare-data-information-right{
+  position: relative;
+  left: 6rem;
+  bottom: 6.5rem;
+  text-align: center;
+  margin: 1rem 0rem 0rem 0rem;
 }
 
 .central-dates .box {
   text-align: center;
-  margin: 1rem 2rem 0rem 2rem;
+  margin: 0.7rem 1rem 0rem 1rem;
   font-weight: 700;
   font-size: var(--one-point-three-size);
   color: var(--text-red-color);
@@ -200,11 +211,14 @@
 }
 
 .dates {
+  position: relative;
+  bottom: 3rem;
+  left: 0;
   margin: auto;
   margin-top: 1rem;
   margin-bottom: 1.5rem;
   margin-right: 0rem;
-  margin-left: 1rem;
+  margin-left: 0rem;
   display: flex;
   align-content: space-between;
   gap: 1rem;
@@ -212,6 +226,7 @@
 
 .battle-between{
   display: flex;
+  flex-direction: column;
   align-content: space-between;
 }
 

@@ -98,6 +98,7 @@
 }
 
 .comparison-area {
+  width: 100%;
   display: flex;
   align-content: space-between;
   align-items: center;
@@ -106,8 +107,8 @@
 }
 
 .compare-button {
-  margin-left: 1rem;
-  width: 10rem;
+  margin: auto;
+  width: 11rem;
   height: 2.3rem;
   font-size: var(--one-point-one-size);
   font-weight: 700;
