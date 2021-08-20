@@ -212,16 +212,25 @@
 
 .dates {
   position: relative;
-  bottom: 3rem;
-  left: 0;
-  margin: auto;
-  margin-top: 1rem;
-  margin-bottom: 1.5rem;
-  margin-right: 0rem;
-  margin-left: 0rem;
+  bottom: 6rem;
   display: flex;
+  flex-direction: column;
   align-content: space-between;
   gap: 1rem;
+}
+
+.box-compare-left{
+  position: relative;
+  right: 7rem;
+  top: 4rem;
+}
+
+.box-compare-right{
+  position: relative;
+  left: 7rem;
+  bottom: 2.5rem;
+  align-content: center;
+  text-align: center;
 }
 
 .battle-between{
