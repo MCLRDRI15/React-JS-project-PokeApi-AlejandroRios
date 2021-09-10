@@ -9,12 +9,14 @@ export function Bubbles() {
     const bubbles = [];
 
     for (const [index, value] of numbers.entries()) {
-      bubbles.push(<div key={index} className={`bubble bubble-${value}`}></div>);
+      bubbles.push(<div key={index} className={`bubble w-3 h-3 
+      rounded-full bg-white opacity-30 fixed z-50
+      -bottom-36; bubble-${value}`}></div>);
     }
 
 
   return (
-    <div className="bubbles">
+    <div className="bubbles w-full">
         {bubbles}
     </div>
   );

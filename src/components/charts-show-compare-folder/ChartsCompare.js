@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from "react";
 import Chart from "chart.js";
-import "./ChartsCompare.module.css";
 
 const DobleCharts = ({ stats, bases, name, color, bases2, name2, color2 }) => {
   const chartRef = useRef();
@@ -43,7 +42,7 @@ const DobleCharts = ({ stats, bases, name, color, bases2, name2, color2 }) => {
   });
 
   return (
-    <div className="rectangles">
+    <div className="m-auto w-64 h-72">
       <canvas ref={chartRef} width="300" height="300"></canvas>
     </div>
   );

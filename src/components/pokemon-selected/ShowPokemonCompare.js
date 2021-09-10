@@ -10,7 +10,7 @@ const ShowPokemonCompare = ({
   cleanPokemonArray,
 }) => (
   <div
-    className={viewState ? "compare-container-chart" : "hidden"}
+    className={viewState ? "compare-container-chart" : "hidden-box"}
   >
     <ScrollLock isActive={viewState}> 
     <div className="pokecard-compare-container">
@@ -18,7 +18,7 @@ const ShowPokemonCompare = ({
         {String(pokemonInPokeball[0].name).toUpperCase()} VS.
         {String(pokemonInPokeball[1].name).toUpperCase()}
         <button className="compare-close-button" onClick={cleanPokemonArray}>
-          <FaSkullCrossbones/>
+          <FaSkullCrossbones className="close-icon-skull"/>
         </button>
       </div>
       <div className="body-chart">
