@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
-import "./CompareArea.module.css";
 
 const ToastComponent = ({ pokemonInPokeball, showChart }) => {
   const [pokemonName, setPokemonName] = useState();
@@ -12,10 +11,10 @@ const ToastComponent = ({ pokemonInPokeball, showChart }) => {
   }, [pokemonInPokeball]);
 
   return (
-    <div className={showChart ? "littleChart-container" : "hidden"}>
-      <div className="compare-container">
+    <div className={showChart ? "relative opacity-80 right-4" : "hidden"}>
+      <div className="m-3 w-40 sticky top-0 z-10 text-center left-full">
         <strong className="type-comparison">Comparing pokemon</strong>
-        <div className="name">{String(pokemonName).toUpperCase()}</div>
+        <div className="w-40 text-center font-semibold border border-gray-400 bg-blue-bg text-white">{String(pokemonName).toUpperCase()}</div>
       </div>
     </div>
   );

@@ -1,3 +1,8 @@
+/* ./src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --backgroundCard: #f5f1f1;
   --generalBlueColor: #4789cf;
@@ -7,6 +12,8 @@
 }
 
 .card {
+  @apply
+  w-64;
   width: 11rem;
   height: 12rem;
   border-radius: 5px;

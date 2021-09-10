@@ -1,67 +1,31 @@
-:root {
-  --greyColor: #9c9c9c99;
-  --cardBackground: linear-gradient(
-    to right,
-    #d2d733,
-    #d9dd2d,
-    #e0e326,
-    #e7e81d,
-    #eeee10
-  );
-  --border-black-color: #000000;
-  --text-red-color: #e43011;
-  --general-white-color: #ffffffff;
-  --compare-blue-color: #295597;
+/* ./src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  --one-point-one-size: 1.1rem;
-  --one-point-two-size: 1.2rem;
-  --cero-point-eight: 0.8rem;
-}
-
-.hidden {
-  display: none;
-}
-
-.container-chart {
-  width: 100vw;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  z-index: 3;
-  background-color: var(--greyColor);
-  overflow: auto;
-  cursor: pointer;
-}
-
-.pokecard-container {
-  background: var(--cardBackground);
-  margin: 1rem auto 4rem auto;
-  padding: 1rem;
-  width: 30%;
-  border-radius: 10px;
-  border: 2px solid var(--border-black-color);
-  overflow: auto;
-  cursor: auto;
-}
 
 @media screen and (max-width: 500px){
   .data{
-    position: relative;
-    right: 3rem;
+    @apply
+    relative
+    right-12;
   }
   .show-data{
-    position: relative;
-    right: 3rem;
+    @apply
+    relative
+    right-12;
   }
   .flex-informations{
-    position: relative;
-    right: 3rem;
+    @apply
+    relative
+    right-12;
   }
 }
 
 @media screen and (max-width: 540px) {
   .pokecard-container {
-    width: 90%;
+    @apply
+    w-11/12;
   }
   
 }
@@ -69,126 +33,54 @@
 
 @media screen and (min-width: 541px) and (max-width: 723px) {
   .pokecard-container {
-    width: 70%;
+    @apply
+    w-9/12;
   }
 }
 
 @media screen and (min-width: 724px) and (max-width: 1200px) {
   .pokecard-container {
-    width: 50%;
+    @apply
+    w-6/12;
   }
 }
 
-.close-chart-button {
-  margin: auto;
-  margin-right: 0.5rem;
-  width: 2rem;
-  height: 2.2rem;
-  font-weight: 900;
-  font-size: var(--one-point-one-size);
-  border-radius: 5px;
-  color: var(--text-red-color);
-  background-color: var(--general-white-color);
-}
-
-.header-chart {
-  padding: 0.5rem;
-  width: 100%;
-  position: relative;
-  border-bottom: 1px solid var(--border-black-color);
-}
-
-.comparison-area {
-  width: 100%;
-  display: flex;
-  align-content: space-between;
-  align-items: center;
-  font-weight: 600;
-  font-size: var(--one-point-one-size);
-}
-
-.compare-button {
-  margin: auto;
-  width: 11rem;
-  height: 2.3rem;
-  font-size: var(--one-point-one-size);
-  font-weight: 700;
-  color: var(--compare-blue-color);
-}
-
-.show-image {
-  margin: auto;
-  width: 30%;
-  margin-top: 1rem;
-  border-radius: 50%;
-}
-
-.image {
-  margin: auto;
-  width: 10rem;
-  height: auto;
-}
-
-.pokemon-personalData {
-  width: 100%;
-}
-
-.pokemon-description {
-  width: 70%;
-  margin: auto;
-  text-align: center;
-  font-weight: 700;
-}
-
-.data {
-  width: 60%;
-  text-align: center;
-  margin: auto;
-  margin-top: 3rem;
-  margin-bottom: 1rem;
-  font-weight: 800;
-  color: var(--text-red-color);
-}
-
-.data .box {
-  margin-left: 2rem;
-}
-
-.show-data .box {
-  margin-left: 2rem;
-}
-
 .show-data {
-  width: 60%;
-  text-align: center;
-  margin: auto;
-  margin-bottom: 2rem;
-  font-weight: 500;
+  @apply
+  w-8/12
+  text-center
+  m-auto
+  mb-8
+  font-medium;
 }
 
 .flex-informations {
-  width: 60%;
-  margin: auto;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  display: flex;
-  align-content: space-between;
-  align-items: baseline;
+  @apply
+  w-8/12
+  m-auto
+  mt-4
+  mb-4
+  flex
+  content-between
+  items-baseline;
 }
 
 .abilities {
-  margin-left: 2rem;
-  margin-right: 5rem;
+  @apply
+  ml-8
+  mr-20;
 }
 
 .flex-informations .box {
-  font-weight: 800;
-  color: var(--text-red-color);
+  @apply
+  font-extrabold
+  text-red-500;
 }
 
 .stats .box {
-  text-align: center;
-  margin-left: 2rem;
-  font-weight: 800;
-  font-size: var(--one-point-two-size);
+  @apply
+  text-center
+  ml-8
+  font-extrabold
+  text-xl;
 }
