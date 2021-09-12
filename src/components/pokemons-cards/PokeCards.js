@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import { setShow } from "../../redux/actions/SingleView";
 import { addSelectedPokemon } from "../../redux/actions/PokemonActions";
 import { POKEAPI, IMAGES_FOLDER } from "../../pages";
-import "./CardStyles.module.css";
 
 const PokemonCard = ({
   name,
@@ -29,10 +28,10 @@ const PokemonCard = ({
   };
 
   return (
-    <li className="card" onClick={addPokemonModelView}>
-      <img src={imageURL} alt={name} className="images" />
-      <div className="pokemon-names">
-      <span className="pokemon-name-span">{name.toUpperCase()}</span>
+    <li className="m-auto w-60 mobilexs:w-44 h-72 mobilexs:h-48 bg-white-backgroundCard rounded-md border-2 border-blue-generalBlueColor text-center no-underline list-none hover:bg-red-cardHover hover:shadow-sm" onClick={addPokemonModelView}>
+      <img src={imageURL} alt={name} className="object-cover w-full h-52 mobilexs:h-36" />
+      <div className="relative top-12 h-7 mobilexs:top-5 mobilexs:h-6 w-full bg-blue-generalBlueColor text-center">
+      <span className="text-white font-bold no-underline">{name.toUpperCase()}</span>
       </div>
     </li>
   );
