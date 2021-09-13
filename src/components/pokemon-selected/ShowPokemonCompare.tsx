@@ -3,12 +3,17 @@ import DobleCharts from "../charts-show-compare-folder/ChartsCompare";
 import {FaSkullCrossbones } from "react-icons/fa";
 import ScrollLock from 'react-scrolllock';
 
+interface Props {
+  pokemonInPokeball: Array<any>;
+  viewState: boolean;
+  cleanPokemonArray: any;
+}
 
 const ShowPokemonCompare = ({
   pokemonInPokeball,
   viewState,
   cleanPokemonArray,
-}) => (
+}:Props) => (
   <div
     className={viewState ? "z-40 w-screen h-full fixed top-0 bg-grey-greyColor overflow-auto  cursor-pointer" : "hidden"}
   >
@@ -56,7 +61,7 @@ const ShowPokemonCompare = ({
             
             <div className="  relative bottom-24 flex flex-col content-between gap-4">
             <span className="relative right-24 mobile:right-32 top-16">
-              {pokemonInPokeball[0].abilities.map((abilities) => {
+              {pokemonInPokeball[0].abilities.map((abilities: { ability: { name: {} | string | any; }; }) => {
                 return (
                   <div key={abilities.ability.name}>
                     {abilities.ability.name}
@@ -66,7 +71,7 @@ const ShowPokemonCompare = ({
             </span>
             <span className="text-center  mt-2 mb-0 mr-5 ml-4 font-bold mobile:text-1xl text-red-500">Abilities</span>  
             <span className="relative left-24 mobile:left-32 bottom-12">
-              {pokemonInPokeball[1].abilities.map((abilities) => {
+              {pokemonInPokeball[1].abilities.map((abilities: { ability: { name: {} | string | any; }; }) => {
                 return (
                   <div key={abilities.ability.name}>
                     {abilities.ability.name}
@@ -80,10 +85,10 @@ const ShowPokemonCompare = ({
         </div>
       </div>
       <DobleCharts
-        stats={pokemonInPokeball[0].stats.map((stat) => {
+        stats={pokemonInPokeball[0].stats.map((stat: { stat: { name: String; }; }) => {
           return stat.stat.name;
         })}
-        bases={pokemonInPokeball[0].stats.map((stat) => {
+        bases={pokemonInPokeball[0].stats.map((stat: { base_stat: any; }) => {
           return stat.base_stat;
         })}
         name={pokemonInPokeball[0].name}
@@ -92,10 +97,10 @@ const ShowPokemonCompare = ({
             ? "black"
             : pokemonInPokeball[0].color.name
         }
-        stats2={pokemonInPokeball[1].stats.map((stat) => {
+        stats2={pokemonInPokeball[1].stats.map((stat: { stat: { name: String; }; }) => {
           return stat.stat.name;
         })}
-        bases2={pokemonInPokeball[1].stats.map((stat) => {
+        bases2={pokemonInPokeball[1].stats.map((stat: { base_stat: any; }) => {
           return stat.base_stat;
         })}
         name2={pokemonInPokeball[1].name}

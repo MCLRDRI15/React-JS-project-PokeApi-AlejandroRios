@@ -4,6 +4,15 @@ import { setShow } from "../../redux/actions/SingleView";
 import { addSelectedPokemon } from "../../redux/actions/PokemonActions";
 import { POKEAPI, IMAGES_FOLDER } from "../../pages";
 
+interface Props {
+  name: String;
+  imageIndex: any;
+  setShow: any;
+  addSelectedPokemon: any;
+  singleViewState: boolean;
+  url: string;
+}
+
 const PokemonCard = ({
   name,
   imageIndex,
@@ -11,7 +20,7 @@ const PokemonCard = ({
   addSelectedPokemon,
   singleViewState,
   url,
-}) => {
+}:Props) => {
   const imageURL = `${IMAGES_FOLDER}${imageIndex}.png`;
 
   const addPokemonModelView = () => {
@@ -29,7 +38,7 @@ const PokemonCard = ({
 
   return (
     <li className="m-auto w-60 mobilexs:w-44 h-72 mobilexs:h-48 bg-white-backgroundCard rounded-md border-2 border-blue-generalBlueColor text-center no-underline list-none hover:bg-red-cardHover hover:shadow-sm" onClick={addPokemonModelView}>
-      <img src={imageURL} alt={name} className="object-cover w-full h-52 mobilexs:h-36" />
+      <img src={imageURL} alt="imagen" className="object-cover w-full h-52 mobilexs:h-36" />
       <div className="relative top-12 h-7 mobilexs:top-5 mobilexs:h-6 w-full bg-blue-generalBlueColor text-center">
       <span className="text-white font-bold no-underline">{name.toUpperCase()}</span>
       </div>
@@ -37,16 +46,16 @@ const PokemonCard = ({
   );
 };
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state: { singleView: { showWindow: boolean; }; }) => {
   return {
     singleViewState: state.singleView.showWindow,
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch: (arg0: any) => void) => {
   return {
-    setShow: (oldState) => dispatch(setShow(oldState)),
-    addSelectedPokemon: (pokemon, pokemonUrl, pokemonDescriptionUrl) =>
+    setShow: (oldState: any) => dispatch(setShow(oldState)),
+    addSelectedPokemon: (pokemon: string[], pokemonUrl: string, pokemonDescriptionUrl: string) =>
       dispatch(addSelectedPokemon(pokemon, pokemonUrl, pokemonDescriptionUrl)),
   };
 };

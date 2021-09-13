@@ -4,8 +4,16 @@ import { fetchRequest, handlerFetch } from "../../redux/actions/PokemonActions";
 import PokemonCard from "../pokemons-cards/PokeCards";
 import ViewMode from "../pokemon-selected/ViewMode";
 import Form from "../input-form-component/Form";
+import { JsxElement } from "ts-morph";
 
-const pokelist = ({ pokemonsList, fetchRequest, handlerFetch, counter }) => {
+interface Props {
+  pokemonsList: Array<any>;
+  fetchRequest: any;
+  handlerFetch: any;
+  counter: number;
+}
+
+const pokelist = ({ pokemonsList, fetchRequest, handlerFetch, counter }:Props) => {
   useEffect(() => {
     fetchRequest(counter);
   }, [fetchRequest, counter]);
@@ -23,7 +31,7 @@ const pokelist = ({ pokemonsList, fetchRequest, handlerFetch, counter }) => {
     <div className="pokeList-container">
       <Form isSeachActive={true} isHamburguerActive={true} />
       <ul className="z-10 grid mobile:grid-cols-auto content-center gap-6 ml-10 mr-10 py-8 px-0 desktop:mr-40 desktop:ml-40  mobile:px-12">
-        {pokemonsList.map((eachPokemon, index) => (
+        {pokemonsList.map((eachPokemon: { name: string; url: string; }, index: number) => (
           <PokemonCard
             key={index + Math.random()}
             name={eachPokemon.name}
@@ -39,17 +47,17 @@ const pokelist = ({ pokemonsList, fetchRequest, handlerFetch, counter }) => {
   );
 };
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state: { pokemons: { counter: any; pokemonsList: any; }; }) => {
   return {
     counter: state.pokemons.counter,
     pokemonsList: state.pokemons.pokemonsList,
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch: (arg0: any) => void) => {
   return {
-    fetchRequest: (url) => dispatch(fetchRequest(url)),
-    handlerFetch: (counter) => dispatch(handlerFetch(counter)),
+    fetchRequest: (url: String) => dispatch(fetchRequest(url)),
+    handlerFetch: (counter: Number) => dispatch(handlerFetch(counter)),
   };
 };
 

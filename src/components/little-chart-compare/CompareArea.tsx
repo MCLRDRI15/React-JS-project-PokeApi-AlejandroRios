@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 
-const ToastComponent = ({ pokemonInPokeball, showChart }) => {
+interface Props {
+  pokemonInPokeball: Array<any>;
+  showChart: boolean;
+}
+
+const ToastComponent = ({ pokemonInPokeball, showChart }:Props) => {
   const [pokemonName, setPokemonName] = useState();
 
   useEffect(() => {
@@ -20,14 +25,14 @@ const ToastComponent = ({ pokemonInPokeball, showChart }) => {
   );
 };
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state: { pokemons: { pokemonInPokeball: String[]; showChart: boolean; }; }) => {
   return {
     pokemonInPokeball: state.pokemons.pokemonInPokeball,
     showChart: state.pokemons.showChart,
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch: any) => {
   return {};
 };
 

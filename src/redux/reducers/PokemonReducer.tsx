@@ -26,7 +26,7 @@ const initialState = {
   search: "",
 };
 
-function pokemons(state = initialState, action) {
+function pokemons(state = initialState, action: { type: string; payload: { pokemons: { previous: boolean; next: string; results: string[]; }; error: String; counter: Number; pokemon: String[]; pokemonDescription: String; search: String; pokemonsList: String[]; pokemonSecondary: String[]; }; }) {
   switch (action.type) {
     case FETCH_POKEMONS_REQUEST:
       return {
@@ -79,7 +79,7 @@ function pokemons(state = initialState, action) {
     case CLEAN_SELECTED_POKEMON:
       return {
         ...state,
-        pokemonInPokeball: [...action.payload.pokemons],
+        pokemonInPokeball: {...action.payload.pokemons},
       };
 
     case SET_COMPARISON_CHART:

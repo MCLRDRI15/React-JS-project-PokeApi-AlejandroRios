@@ -3,18 +3,26 @@ import Charts from "../charts-show-folder/Charts";
 import {FaSkullCrossbones } from "react-icons/fa";
 import ScrollLock from 'react-scrolllock';
 
+interface Props {
+  keepPokemon: any;
+  pokemonInPokeball: Array<any>;
+  singleView: boolean;
+  cleanPokemonArray: any;
+}
+
+
 const ShowPokemonData = ({
   keepPokemon,
   pokemonInPokeball,
   singleView,
   cleanPokemonArray,
-}) => {
+}:Props) => {
   return (
     <div className={singleView ? "h-full fixed top-0 z-40 bg-grey-greyColor overflow-auto cursor-pointer w-screen " : "hidden"}>
       <ScrollLock isActive={singleView}> 
       <div className="w-11/12 laptop:w-4/12 mobile:w-7/12 tablet:w-6/12  p-4 overflow-auto cursor-auto border-2 border-gray-900 rounded-xl mt-4 mb-16 mr-auto ml-auto bg-yellow-yellowInput ">
         <div className="p-2 w-full relative border-b border-gray-900">
-          {pokemonInPokeball.map((pokemon, index = 1) => {
+          {pokemonInPokeball.map((pokemon: { name: String; }, index = 1) => {
             return (
               <div key={index + Math.random()} className="w-full flex content-between items-center font-semibold text-lg">
                 {String(pokemon.name).toUpperCase()}
@@ -32,7 +40,7 @@ const ShowPokemonData = ({
           })}
         </div>
         <div className="body-chart">
-          {pokemonInPokeball.map((pokemon, index = 1) => {
+          {pokemonInPokeball.map((pokemon: { image: any; flavor_text_entries: { flavor_text: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined; }[]; height: number; weight: number; abilities: string[]; types: string[]; stats: string[]; name: string; color: { name: string; }; }, index = 1) => {
             return (
               <div
                 className="principal-information"
@@ -66,7 +74,7 @@ const ShowPokemonData = ({
 
                         <div className="each-ability">
                           <ul>
-                            {pokemon.abilities.map((abilities) => {
+                            {pokemon.abilities.map((abilities: any | { ability: { name: any }; }) => {
                               return (
                                 <li key={abilities.ability.name}>
                                   {abilities.ability.name}
@@ -80,7 +88,7 @@ const ShowPokemonData = ({
                         <span className="box font-extrabold">Types</span>
 
                         <div className="each-type">
-                          {pokemon.types.map((types) => {
+                          {pokemon.types.map((types: any | { type: { name: any }; }) => {
                             return (
                               <li key={types.type.name}>{types.type.name}</li>
                             );
@@ -92,10 +100,10 @@ const ShowPokemonData = ({
                   <div className="stats flex flex-col">
                     <span className="text-center font-extrabold text-xl text-red-500">Stats:</span>
                     <Charts
-                      stats={pokemon.stats.map((stat) => {
+                      stats={pokemon.stats.map((stat: any | { stat: { name: any; }; }) => {
                         return stat.stat.name;
                       })}
-                      bases={pokemon.stats.map((stat) => {
+                      bases={pokemon.stats.map((stat: any | { base_stat: any; }) => {
                         return stat.base_stat;
                       })}
                       name={pokemon.name}

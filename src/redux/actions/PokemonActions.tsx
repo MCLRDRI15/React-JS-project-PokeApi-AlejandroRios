@@ -15,7 +15,7 @@ export const ADD_SEARCH = "ADD_SEARCH";
 export const RETURN_TO_ORIGINAL_LIST = "RETURN_TO_ORIGINAL_LIST";
 
 /* Function that brings pokemons data from API URL */
-export const fetchRequest = (counter) => (dispatch) => {
+export const fetchRequest = (counter: String) => (dispatch: (arg0: { type: string; payload?: { pokemons: string[]; } | { error: string; }; }) => void) => {
   const url = `${POKEAPI}pokemon?offset=${counter}&limit=20`;
 
   dispatch({ type: FETCH_POKEMONS_REQUEST });
@@ -40,7 +40,7 @@ export const fetchRequest = (counter) => (dispatch) => {
 };
 
 /* function that handle the number of pokemons in the list which are called from the API */
-export const handlerFetch = (pokemonsInList) => (dispatch) => {
+export const handlerFetch = (pokemonsInList: Number) => (dispatch: (arg0: { type: string; payload: { counter: number; }; }) => void) => {
   dispatch({
     type: HANDLER_POKEMONS_FETCH,
     payload: {
@@ -52,7 +52,7 @@ export const handlerFetch = (pokemonsInList) => (dispatch) => {
 /* If the user selects one Card that contains the picture and Name of a pokemon - 
 its doing the call to this function that add the info to can be seen after*/
 export const addSelectedPokemon =
-  (pokemon, pokemonUrl, pokemonDescriptionUrl) => (dispatch) => {
+  (pokemon: string[], pokemonUrl: RequestInfo, pokemonDescriptionUrl: RequestInfo) => (dispatch: (arg0: { type: string; payload: { pokemons: Array<String>; pokemonDescription: string; pokemon: Array<String>; } | { error: string; }; }) => void) => {
     Promise.all([
       fetch(pokemonUrl).then((pokemonRes) => pokemonRes.json()),
       fetch(pokemonDescriptionUrl).then((pokemonDescriptionRes) =>
@@ -91,7 +91,7 @@ export const addSelectedPokemon =
   };
 
 /* This function assigns void value to pokemon Array  */
-export const cleanSelectedPokemons = () => (dispatch) => {
+export const cleanSelectedPokemons = () => (dispatch: (arg0: { type: string; payload: { pokemons: String[]; }; }) => void) => {
   dispatch({
     type: CLEAN_SELECTED_POKEMON,
     payload: {
@@ -101,7 +101,7 @@ export const cleanSelectedPokemons = () => (dispatch) => {
 };
 
 /* function that allows to enable the comparison chart */
-export const setComparisonChart = (showChart) => (dispatch) => {
+export const setComparisonChart = (showChart: boolean) => (dispatch: (arg0: { type: string; payload: { actualState: boolean; }; }) => void) => {
   dispatch({
     type: SET_COMPARISON_CHART,
     payload: {
@@ -111,7 +111,7 @@ export const setComparisonChart = (showChart) => (dispatch) => {
 };
 
 /* This function search for a pokemon that is in the list  */
-export const addSearch = (search, pokemonsArrayIn) => ({
+export const addSearch = (search: string | String, pokemonsArrayIn: any[]) => ({
   type: ADD_SEARCH,
   payload: {
     search,
@@ -122,7 +122,7 @@ export const addSearch = (search, pokemonsArrayIn) => ({
 });
 
 /* This function assigns the original array of pokemons to the list */
-export const returnToList = (pokemonSecondary) => (dispatch) => {
+export const returnToList = (pokemonSecondary: string[]) => (dispatch: (arg0: { type: string; payload: { pokemonSecondary: string[]; }; }) => void) => {
   dispatch({
     type: CLEAN_SELECTED_POKEMON,
     payload: {
