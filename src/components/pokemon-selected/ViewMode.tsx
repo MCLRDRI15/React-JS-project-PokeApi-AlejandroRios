@@ -6,12 +6,17 @@ import { cleanSelectedPokemons } from "../../redux/actions/PokemonActions";
 import { setComparisonChart } from "../../redux/actions/PokemonActions";
 import ShowPokemonCompare from "./ShowPokemonCompare";
 
+interface pokemons{
+  name: string;
+  url: string;
+}
+
 interface Props{
-  setShow: any;
+  setShow: boolean;
   viewState: boolean;
-  pokemonInPokeball: Array<any>;
-  cleanSelectedPokemons: any;
-  setComparisonChart: any;
+  pokemonInPokeball: pokemons[];
+  cleanSelectedPokemons: string;
+  setComparisonChart: boolean;
   showChart: boolean;
 }
 
@@ -24,16 +29,16 @@ const ViewMode = ({
   showChart,
 }: Props) => {
   const cleanPokemonArray = () => {
-    setShow(viewState);
-    cleanSelectedPokemons();
+    setShow?(viewState):Boolean;
+    cleanSelectedPokemons?():String;
     if (showChart) {
-      setComparisonChart();
+      setComparisonChart?():Boolean;
     }
   };
 
   const keepPokemon = () => {
-    setShow(viewState);
-    setComparisonChart();
+    setShow?(viewState):Boolean;
+    setComparisonChart?():Boolean;
   };
 
   return (
@@ -56,7 +61,7 @@ const ViewMode = ({
   );
 };
 
-const mapStateToProps = (state: { singleView: { showWindow: boolean; }; pokemons: { pokemonInPokeball: Array<any>; showChart: boolean; }; }) => {
+const mapStateToProps = (state: { singleView: { showWindow: boolean; }; pokemons: { pokemonInPokeball: pokemons[]; showChart: boolean; }; }) => {
   return {
     viewState: state.singleView.showWindow,
     pokemonInPokeball: state.pokemons.pokemonInPokeball,

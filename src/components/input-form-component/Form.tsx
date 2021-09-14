@@ -8,7 +8,7 @@ import CompareArea from "../little-chart-compare/CompareArea";
 import tittle from "../img-folder/tittle.png";
 
 const Form = (props: {
-  addSearch: (arg0: any, arg1: any) => void;
+  addSearch: (arg0: string, arg1: string[]) => void;
   state: { pokemons: { pokemonSecondary: String[] } };
   isHamburguerActive: boolean;
   isSeachActive: boolean;
@@ -101,9 +101,9 @@ const mapStateToProps = (state: RootStateOrAny) => {
   };
 };
 
-const mapDispatchToProps = (dispatch: (arg0: any) => void) => {
+const mapDispatchToProps = (dispatch: (arg0: {type: string; payload?: | { search: string, pokemonSecondary: string }}) => void) => {
   return {
-    addSearch: (search: String, pokemonSecondary: Array<String>) =>
+    addSearch: (search: string, pokemonSecondary: string[]) =>
       dispatch(addSearch(search, pokemonSecondary)),
   };
 };

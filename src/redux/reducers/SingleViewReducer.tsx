@@ -4,7 +4,7 @@ const initialState = {
   showWindow: false,
 };
 
-function singleView(state = initialState, action: { type: String; }) {
+function singleView(state = initialState, action: { type: string; }) {
   switch (action.type) {
     case SET_SHOW:
       return {

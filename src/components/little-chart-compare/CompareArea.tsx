@@ -1,8 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 
+interface pokemons{
+  name: string;
+  url: string;
+}
+
 interface Props {
-  pokemonInPokeball: Array<any>;
+  pokemonInPokeball: Array<pokemons>;
   showChart: boolean;
 }
 

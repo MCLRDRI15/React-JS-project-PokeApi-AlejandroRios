@@ -3,11 +3,17 @@ import Charts from "../charts-show-folder/Charts";
 import {FaSkullCrossbones } from "react-icons/fa";
 import ScrollLock from 'react-scrolllock';
 
+
+interface pokemons{
+  name: string;
+  url: string;
+}
+
 interface Props {
-  keepPokemon: any;
-  pokemonInPokeball: Array<any>;
+  keepPokemon: boolean;
+  pokemonInPokeball: pokemons[];
   singleView: boolean;
-  cleanPokemonArray: any;
+  cleanPokemonArray: string;
 }
 
 
@@ -74,7 +80,7 @@ const ShowPokemonData = ({
 
                         <div className="each-ability">
                           <ul>
-                            {pokemon.abilities.map((abilities: any | { ability: { name: any }; }) => {
+                            {pokemon.abilities.map((abilities: string[] | { ability: { name: string }; }) => {
                               return (
                                 <li key={abilities.ability.name}>
                                   {abilities.ability.name}
@@ -88,7 +94,7 @@ const ShowPokemonData = ({
                         <span className="box font-extrabold">Types</span>
 
                         <div className="each-type">
-                          {pokemon.types.map((types: any | { type: { name: any }; }) => {
+                          {pokemon.types.map((types: string[] | { type: { name: string }; }) => {
                             return (
                               <li key={types.type.name}>{types.type.name}</li>
                             );

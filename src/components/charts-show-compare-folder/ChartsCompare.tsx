@@ -2,12 +2,12 @@ import React, { FunctionComponent, useEffect, useRef } from "react";
 import Chart from "chart.js";
 
 type ChartProps = {
-  stats: any,
-  bases: any,
+  stats: string[],
+  bases: number[],
   name: string,
   color: string,
-  stats2: any;
-  bases2: any,
+  stats2: string[];
+  bases2: number[],
   name2: string,
   color2: string,
 

@@ -15,7 +15,7 @@ export const ADD_SEARCH = "ADD_SEARCH";
 export const RETURN_TO_ORIGINAL_LIST = "RETURN_TO_ORIGINAL_LIST";
 
 /* Function that brings pokemons data from API URL */
-export const fetchRequest = (counter: String) => (dispatch: (arg0: { type: string; payload?: { pokemons: string[]; } | { error: string; }; }) => void) => {
+export const fetchRequest = (counter: Number) => (dispatch: (arg0: { type: string; payload?: { pokemons: string[]; } | { error: string; }; }) => void) => {
   const url = `${POKEAPI}pokemon?offset=${counter}&limit=20`;
 
   dispatch({ type: FETCH_POKEMONS_REQUEST });
@@ -40,7 +40,7 @@ export const fetchRequest = (counter: String) => (dispatch: (arg0: { type: strin
 };
 
 /* function that handle the number of pokemons in the list which are called from the API */
-export const handlerFetch = (pokemonsInList: Number) => (dispatch: (arg0: { type: string; payload: { counter: number; }; }) => void) => {
+export const handlerFetch = (pokemonsInList: Number) => (dispatch: (arg0: { type: string; payload: { counter: Number; }; }) => void) => {
   dispatch({
     type: HANDLER_POKEMONS_FETCH,
     payload: {
@@ -52,7 +52,7 @@ export const handlerFetch = (pokemonsInList: Number) => (dispatch: (arg0: { type
 /* If the user selects one Card that contains the picture and Name of a pokemon - 
 its doing the call to this function that add the info to can be seen after*/
 export const addSelectedPokemon =
-  (pokemon: string[], pokemonUrl: RequestInfo, pokemonDescriptionUrl: RequestInfo) => (dispatch: (arg0: { type: string; payload: { pokemons: Array<String>; pokemonDescription: string; pokemon: Array<String>; } | { error: string; }; }) => void) => {
+  (pokemon: string[], pokemonUrl: RequestInfo, pokemonDescriptionUrl: RequestInfo) => (dispatch: (arg0: { type: string; payload: { pokemons: Array<string>; pokemonDescription: string; pokemon: Array<string>; } | { error: string; }; }) => void) => {
     Promise.all([
       fetch(pokemonUrl).then((pokemonRes) => pokemonRes.json()),
       fetch(pokemonDescriptionUrl).then((pokemonDescriptionRes) =>
@@ -111,7 +111,12 @@ export const setComparisonChart = (showChart: boolean) => (dispatch: (arg0: { ty
 };
 
 /* This function search for a pokemon that is in the list  */
-export const addSearch = (search: string | String, pokemonsArrayIn: any[]) => ({
+interface pokemonSecondary{
+  name: string;
+  url: string;
+}
+
+export const addSearch = (search: string | string, pokemonsArrayIn: pokemonSecondary[]) => ({
   type: ADD_SEARCH,
   payload: {
     search,

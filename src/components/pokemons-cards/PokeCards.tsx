@@ -1,26 +1,39 @@
-import React from "react";
+import React, {FC, ReactElement} from "react";
 import { connect } from "react-redux";
 import { setShow } from "../../redux/actions/SingleView";
 import { addSelectedPokemon } from "../../redux/actions/PokemonActions";
 import { POKEAPI, IMAGES_FOLDER } from "../../pages";
 
+interface pokemons{
+  name: string;
+  imageIndex: number;
+  image: string;
+}
+
+interface url{
+  url: string;
+}
+
+interface imageURL {
+  imageUrl: string;
+}
+
+interface addSelectedPokemons{
+  information: pokemons;
+  url: url;
+  image: imageURL;
+}
+
 interface Props {
-  name: String;
-  imageIndex: any;
-  setShow: any;
-  addSelectedPokemon: any;
+  name: string;
+  imageIndex: string;
+  setShow: boolean | unknown;
+  addSelectedPokemon: addSelectedPokemons | unknown;
   singleViewState: boolean;
   url: string;
 }
 
-const PokemonCard = ({
-  name,
-  imageIndex,
-  setShow,
-  addSelectedPokemon,
-  singleViewState,
-  url,
-}:Props) => {
+const PokemonCard: React.FC<Props> = ({name, imageIndex, setShow, addSelectedPokemon, singleViewState, url,}) => {
   const imageURL = `${IMAGES_FOLDER}${imageIndex}.png`;
 
   const addPokemonModelView = () => {
@@ -33,7 +46,7 @@ const PokemonCard = ({
       url,
       `${POKEAPI}pokemon-species/${imageIndex}/`
     );
-    setShow(singleViewState);
+    setShow?(singleViewState):Boolean;
   };
 
   return (
@@ -54,10 +67,9 @@ const mapStateToProps = (state: { singleView: { showWindow: boolean; }; }) => {
 
 const mapDispatchToProps = (dispatch: (arg0: any) => void) => {
   return {
-    setShow: (oldState: any) => dispatch(setShow(oldState)),
+    setShow: (oldState: boolean) => dispatch(setShow(oldState)),
     addSelectedPokemon: (pokemon: string[], pokemonUrl: string, pokemonDescriptionUrl: string) =>
       dispatch(addSelectedPokemon(pokemon, pokemonUrl, pokemonDescriptionUrl)),
   };
 };
-
 export default connect(mapStateToProps, mapDispatchToProps)(PokemonCard);
