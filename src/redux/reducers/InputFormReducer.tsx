@@ -6,7 +6,10 @@ const inisialState = {
   isSearchActive: false,
 };
 
-function searchPokemon(state = inisialState, action: { type: string; payload: string; }) {
+function searchPokemon(
+  state = inisialState,
+  action: { type: string; payload: string }
+) {
   switch (action.type) {
     case ADD_SEARCH:
       return {

@@ -6,20 +6,28 @@ import { cleanSelectedPokemons } from "../../redux/actions/PokemonActions";
 import { setComparisonChart } from "../../redux/actions/PokemonActions";
 import ShowPokemonCompare from "./ShowPokemonCompare";
 
-interface pokemons{
-  image: string; 
-  flavor_text_entries: { flavor_text: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined; }[];
-  height: number; 
-  weight: number; 
-  abilities: string[]; 
+interface pokemons {
+  image: string;
+  flavor_text_entries: {
+    flavor_text:
+      | boolean
+      | React.ReactChild
+      | React.ReactFragment
+      | React.ReactPortal
+      | null
+      | undefined;
+  }[];
+  height: number;
+  weight: number;
+  abilities: string[];
   gender: number;
-  types: string[]; 
-  stats: string[]; 
-  name: string; 
-  color: { name: string; };
+  types: string[];
+  stats: string[];
+  name: string;
+  color: { name: string };
 }
 
-interface Props{
+interface Props {
   setShow: Function;
   viewState: boolean;
   pokemonInPokeball: pokemons[];
@@ -36,16 +44,16 @@ const ViewMode = ({
   setComparisonChart,
   showChart,
 }: Props) => {
-  const cleanPokemonArray = ():void => {
-    setShow?(viewState):Boolean;
+  const cleanPokemonArray = (): void => {
+    setShow ? viewState : Boolean;
     cleanSelectedPokemons();
     if (showChart) {
       setComparisonChart();
     }
   };
 
-  const keepPokemon = ():void => {
-    setShow?(viewState):Boolean;
+  const keepPokemon = (): void => {
+    setShow ? viewState : Boolean;
     setComparisonChart();
   };
 
@@ -69,7 +77,10 @@ const ViewMode = ({
   );
 };
 
-const mapStateToProps = (state: { singleView: { showWindow: boolean; }; pokemons: { pokemonInPokeball: pokemons[]; showChart: boolean; }; }) => {
+const mapStateToProps = (state: {
+  singleView: { showWindow: boolean };
+  pokemons: { pokemonInPokeball: pokemons[]; showChart: boolean };
+}) => {
   return {
     viewState: state.singleView.showWindow,
     pokemonInPokeball: state.pokemons.pokemonInPokeball,
@@ -77,7 +88,28 @@ const mapStateToProps = (state: { singleView: { showWindow: boolean; }; pokemons
   };
 };
 
-const mapDispatchToProps = (dispatch: (arg0: { (dispatch: (arg0: { type: string; payload: { oldState?: boolean; }; }) => void): void; (dispatch: (arg0: { type: string; payload: { pokemons: String[]; }; }) => void): void; (dispatch: (arg0: { type: string; payload: { actualState: boolean; }; }) => void): void; }) => any) => {
+const mapDispatchToProps = (
+  dispatch: (arg0: {
+    (
+      dispatch: (arg0: {
+        type: string;
+        payload: { oldState?: boolean };
+      }) => void
+    ): void;
+    (
+      dispatch: (arg0: {
+        type: string;
+        payload: { pokemons: String[] };
+      }) => void
+    ): void;
+    (
+      dispatch: (arg0: {
+        type: string;
+        payload: { actualState: boolean };
+      }) => void
+    ): void;
+  }) => any
+) => {
   return {
     setShow: (oldState: boolean) => dispatch(setShow(oldState)),
     cleanSelectedPokemons: () => dispatch(cleanSelectedPokemons()),

@@ -101,7 +101,12 @@ const mapStateToProps = (state: RootStateOrAny) => {
   };
 };
 
-const mapDispatchToProps = (dispatch: (arg0: {type: string; payload?: | { search: string, pokemonSecondary: string[] }}) => void) => {
+const mapDispatchToProps = (
+  dispatch: (arg0: {
+    type: string;
+    payload?: { search: string; pokemonSecondary: string[] };
+  }) => void
+) => {
   return {
     addSearch: (search: string, pokemonSecondary: string[]) =>
       dispatch(addSearch(search, pokemonSecondary)),

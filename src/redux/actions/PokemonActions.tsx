@@ -15,44 +15,71 @@ export const ADD_SEARCH = "ADD_SEARCH";
 export const RETURN_TO_ORIGINAL_LIST = "RETURN_TO_ORIGINAL_LIST";
 
 /* Function that brings pokemons data from API URL */
-export const fetchRequest = (counter: Number) => (dispatch: (arg0: { type: string; payload?: { pokemons: string[]; } | { error: string; }; }) => void) => {
-  const url = `${POKEAPI}pokemon?offset=${counter}&limit=20`;
+export const fetchRequest =
+  (counter: Number) =>
+  (
+    dispatch: (arg0: {
+      type: string;
+      payload?: { pokemons: string[] } | { error: string };
+    }) => void
+  ) => {
+    const url = `${POKEAPI}pokemon?offset=${counter}&limit=20`;
 
-  dispatch({ type: FETCH_POKEMONS_REQUEST });
-  fetch(url)
-    .then((res) => res.json())
-    .then((data) => {
-      dispatch({
-        type: FETCH_POKEMONS_SUCCESS,
-        payload: {
-          pokemons: data,
-        },
+    dispatch({ type: FETCH_POKEMONS_REQUEST });
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => {
+        dispatch({
+          type: FETCH_POKEMONS_SUCCESS,
+          payload: {
+            pokemons: data,
+          },
+        });
+      })
+      .catch((error) => {
+        dispatch({
+          type: FETCH_POKEMONS_ERROR,
+          payload: {
+            error: error.toString(),
+          },
+        });
       });
-    })
-    .catch((error) => {
-      dispatch({
-        type: FETCH_POKEMONS_ERROR,
-        payload: {
-          error: error.toString(),
-        },
-      });
-    });
-};
+  };
 
 /* function that handle the number of pokemons in the list which are called from the API */
-export const handlerFetch = (pokemonsInList: Number) => (dispatch: (arg0: { type: string; payload: { counter: Number; }; }) => void) => {
-  dispatch({
-    type: HANDLER_POKEMONS_FETCH,
-    payload: {
-      counter: Number(pokemonsInList) + 20,
-    },
-  });
-};
+export const handlerFetch =
+  (pokemonsInList: Number) =>
+  (
+    dispatch: (arg0: { type: string; payload: { counter: Number } }) => void
+  ) => {
+    dispatch({
+      type: HANDLER_POKEMONS_FETCH,
+      payload: {
+        counter: Number(pokemonsInList) + 20,
+      },
+    });
+  };
 
 /* If the user selects one Card that contains the picture and Name of a pokemon - 
 its doing the call to this function that add the info to can be seen after*/
 export const addSelectedPokemon =
-  (pokemon: string[], pokemonUrl: RequestInfo, pokemonDescriptionUrl: RequestInfo) => (dispatch: (arg0: { type: string; payload: { pokemons: Array<string>; pokemonDescription: string; pokemon: Array<string>; } | { error: string; }; }) => void) => {
+  (
+    pokemon: string[],
+    pokemonUrl: RequestInfo,
+    pokemonDescriptionUrl: RequestInfo
+  ) =>
+  (
+    dispatch: (arg0: {
+      type: string;
+      payload:
+        | {
+            pokemons: Array<string>;
+            pokemonDescription: string;
+            pokemon: Array<string>;
+          }
+        | { error: string };
+    }) => void
+  ) => {
     Promise.all([
       fetch(pokemonUrl).then((pokemonRes) => pokemonRes.json()),
       fetch(pokemonDescriptionUrl).then((pokemonDescriptionRes) =>
@@ -91,48 +118,68 @@ export const addSelectedPokemon =
   };
 
 /* This function assigns void value to pokemon Array  */
-export const cleanSelectedPokemons = () => (dispatch: (arg0: { type: string; payload: { pokemons: String[]; }; }) => void) => {
-  dispatch({
-    type: CLEAN_SELECTED_POKEMON,
-    payload: {
-      pokemons: [],
-    },
-  });
-};
+export const cleanSelectedPokemons =
+  () =>
+  (
+    dispatch: (arg0: { type: string; payload: { pokemons: String[] } }) => void
+  ) => {
+    dispatch({
+      type: CLEAN_SELECTED_POKEMON,
+      payload: {
+        pokemons: [],
+      },
+    });
+  };
 
 /* function that allows to enable the comparison chart */
-export const setComparisonChart = (showChart: boolean) => (dispatch: (arg0: { type: string; payload: { actualState: boolean; }; }) => void) => {
-  dispatch({
-    type: SET_COMPARISON_CHART,
-    payload: {
-      actualState: showChart,
-    },
-  });
-};
+export const setComparisonChart =
+  (showChart: boolean) =>
+  (
+    dispatch: (arg0: {
+      type: string;
+      payload: { actualState: boolean };
+    }) => void
+  ) => {
+    dispatch({
+      type: SET_COMPARISON_CHART,
+      payload: {
+        actualState: showChart,
+      },
+    });
+  };
 
 /* This function search for a pokemon that is in the list  */
-interface pokemonSecondary{
+interface pokemonSecondary {
   name: string;
   url: string;
 }
 
-export const addSearch = (search: string | string, pokemonsArrayIn: pokemonSecondary[]) => ({
+export const addSearch = (
+  search: string | string,
+  pokemonsArrayIn: pokemonSecondary[]
+) => ({
   type: ADD_SEARCH,
   payload: {
     search,
-    pokemonsList: pokemonsArrayIn.filter(
-      (pokemon) => pokemon.name.toLowerCase().includes(
-        search.toLowerCase()))
+    pokemonsList: pokemonsArrayIn.filter((pokemon) =>
+      pokemon.name.toLowerCase().includes(search.toLowerCase())
+    ),
   },
 });
 
 /* This function assigns the original array of pokemons to the list */
-export const returnToList = (pokemonSecondary: string[]) => (dispatch: (arg0: { type: string; payload: { pokemonSecondary: string[]; }; }) => void) => {
-  dispatch({
-    type: CLEAN_SELECTED_POKEMON,
-    payload: {
-      pokemonSecondary: pokemonSecondary,
-    },
-  });
-};
-  
+export const returnToList =
+  (pokemonSecondary: string[]) =>
+  (
+    dispatch: (arg0: {
+      type: string;
+      payload: { pokemonSecondary: string[] };
+    }) => void
+  ) => {
+    dispatch({
+      type: CLEAN_SELECTED_POKEMON,
+      payload: {
+        pokemonSecondary: pokemonSecondary,
+      },
+    });
+  };

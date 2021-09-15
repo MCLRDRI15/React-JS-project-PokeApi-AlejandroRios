@@ -8,8 +8,7 @@
 }
 
 .bubble-one {
-  @apply
-  w-3
+  @apply w-3
   h-3
   rounded-full
   bg-white
@@ -19,8 +18,7 @@
 }
 
 .bubble-two {
-  @apply
-  w-3
+  @apply w-3
   h-3
   rounded-full
   bg-white
@@ -30,8 +28,7 @@
 }
 
 .bubble-three {
-  @apply
-  w-3
+  @apply w-3
   h-3
   rounded-full
   bg-white
@@ -41,8 +38,7 @@
 }
 
 .bubble-four {
-  @apply
-  w-3.5
+  @apply w-3.5
   h-3.5
   rounded-full
   bg-white;
@@ -52,8 +48,7 @@
 }
 
 .bubble-five {
-  @apply
-  w-4
+  @apply w-4
   h-4
   rounded-full
   bg-white
@@ -63,8 +58,7 @@
 }
 
 .bubble-six {
-  @apply
-  w-3.5
+  @apply w-3.5
   h-3.5
   rounded-full
   bg-white
@@ -74,8 +68,7 @@
 }
 
 .bubble-seven {
-  @apply
-  w-3
+  @apply w-3
   h-3
   rounded-full
   bg-white
@@ -85,8 +78,7 @@
 }
 
 .bubble-eight {
-  @apply
-  w-3.5
+  @apply w-3.5
   h-3.5
   rounded-full
   bg-white
@@ -96,8 +88,7 @@
 }
 
 .bubble-nine {
-  @apply
-  w-4
+  @apply w-4
   h-4
   rounded-full
   bg-white
@@ -107,8 +98,7 @@
 }
 
 .bubble-ten {
-  @apply
-  w-4
+  @apply w-4
   h-4
   rounded-full
   bg-white
@@ -118,8 +108,7 @@
 }
 
 .bubble-eleven {
-  @apply
-  w-3
+  @apply w-3
   h-3
   rounded-full
   bg-white
@@ -129,8 +118,7 @@
 }
 
 .bubble-twelve {
-  @apply
-  w-5
+  @apply w-5
   h-5
   rounded-full
   bg-white
@@ -140,8 +128,7 @@
 }
 
 .bubble-thirteen {
-  @apply
-  w-4
+  @apply w-4
   h-4
   rounded-full
   bg-white
@@ -151,20 +138,17 @@
 }
 
 .bubble-fourteen {
-  @apply
-  w-4
+  @apply w-4
   h-4
   rounded-full
   bg-white
   left-2/4;
   animation-duration: 2s;
   animation-delay: 3s;
-
 }
 
 .bubble-fifteen {
-  @apply
-  w-3.5
+  @apply w-3.5
   h-3.5
   rounded-full
   bg-white
@@ -174,8 +158,7 @@
 }
 
 .bubble-sixteen {
-  @apply
-  w-4
+  @apply w-4
   h-4
   rounded-full
   bg-white;
@@ -185,8 +168,7 @@
 }
 
 .bubble-seventeen {
-  @apply
-  w-5
+  @apply w-5
   h-5
   rounded-full
   bg-white;
@@ -196,8 +178,7 @@
 }
 
 .bubble-eighteen {
-  @apply
-  w-5
+  @apply w-5
   h-5
   rounded-full
   bg-white;
@@ -207,20 +188,17 @@
 }
 
 .bubble-nineteen {
-  @apply
-  w-2
+  @apply w-2
   h-2
   rounded-full
   bg-white;
   left: 9%;
   animation-duration: 3s;
   animation-delay: 2s;
- 
 }
 
 .bubble-twenty {
-  @apply
-  w-2
+  @apply w-2
   h-2
   rounded-full
   bg-white;
