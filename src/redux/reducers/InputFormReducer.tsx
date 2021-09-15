@@ -1,3 +1,4 @@
+
 import { ADD_SEARCH } from "../actions/InputFormActions";
 
 const inisialState = {

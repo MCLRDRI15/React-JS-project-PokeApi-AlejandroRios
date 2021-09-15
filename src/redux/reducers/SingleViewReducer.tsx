@@ -1,3 +1,4 @@
+
 import { SET_SHOW } from "../actions/SingleView";
 
 const initialState = {
