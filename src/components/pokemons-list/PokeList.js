@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { fetchRequest, handlerFetch } from "../../redux/actions/PokemonActions";
 import PokemonCard from "../pokemons-cards/PokeCards";
 import ViewMode from "../pokemon-selected/ViewMode";
+import "./Pokelist.module.css";
 import Form from "../input-form-component/Form";
 
 const pokelist = ({ pokemonsList, fetchRequest, handlerFetch, counter }) => {
@@ -22,7 +23,7 @@ const pokelist = ({ pokemonsList, fetchRequest, handlerFetch, counter }) => {
   return (
     <div className="pokeList-container">
       <Form isSeachActive={true} isHamburguerActive={true} />
-      <ul className="z-10 grid mobile:grid-cols-auto content-center gap-6 ml-10 mr-10 py-8 px-0 desktop:mr-40 desktop:ml-40  mobile:px-12">
+      <ul className="pokeList-section">
         {pokemonsList.map((eachPokemon, index) => (
           <PokemonCard
             key={index + Math.random()}

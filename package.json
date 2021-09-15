@@ -8,14 +8,9 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
-    "@types/jest": "^27.0.1",
-    "@types/node": "^16.9.1",
-    "@types/react": "^17.0.20",
-    "@types/react-dom": "^17.0.9",
     "bootstrap": "^5.0.2",
     "chart.js": "^2.9.4",
     "code": "^5.2.4",
-    "js-to-ts-converter": "^0.18.1",
     "react": "^17.0.2",
     "react-bootstrap": "^1.6.1",
     "react-dom": "^17.0.2",
@@ -28,7 +23,6 @@
     "redux-devtools-extension": "^2.13.9",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
-    "typescript": "^4.4.3",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
@@ -60,9 +54,6 @@
     ]
   },
   "devDependencies": {
-    "@types/chart.js": "^2.9.34",
-    "@types/react-router-dom": "^5.1.8",
-    "@types/redux-logger": "^3.0.9",
     "autoprefixer": "^9.8.6",
     "eslint-plugin-react-hooks": "^4.2.0",
     "gh-pages": "^3.2.3",

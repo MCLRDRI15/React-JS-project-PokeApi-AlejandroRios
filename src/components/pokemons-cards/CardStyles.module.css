@@ -1,0 +1,78 @@
+/* ./src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --backgroundCard: #f5f1f1;
+  --generalBlueColor: #4789cf;
+  --borderBoxShadow: #0000004d 4px 8px 4px;
+  --borderBoxHover: #ffffff 5px 12px 4px;
+  --cardHover: #e4b2b2;
+}
+
+.card {
+  @apply
+  w-64;
+  width: 11rem;
+  height: 12rem;
+  border-radius: 5px;
+  background: var(--backgroundCard);
+  border: 2px solid var(--generalBlueColor);
+  box-shadow: var(--borderBoxShadow);
+  text-align: center;
+  text-decoration: none;
+  list-style: none;
+}
+
+.card:hover {
+  box-shadow: var(--borderBoxHover);
+  background: var(--cardHover);
+  transition: all 0.5s ease-in;
+}
+
+.pokemon-names {
+  position: relative;
+  top: 0.9rem;
+  height: 1.5rem;
+  width: 100%;
+  background: var(--generalBlueColor);
+}
+
+.pokemon-name-span{
+  color: var(--backgroundCard);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.images {
+  object-fit: cover;
+  height: 9.5rem;
+  width: 100%;
+}
+
+@media (max-width: 480px) {
+  .card {
+    margin: auto;
+    width: 15rem;
+    height: 18rem;
+    border-radius: 5px;
+    background: var(--backgroundCard);
+    border: 2px solid var(--generalBlueColor);
+    box-shadow: var(--borderBoxShadow);
+  }
+
+  .pokemon-names {
+    position: relative;
+    top: 3.3rem;
+    height: 1.5rem;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .images {
+    object-fit: cover;
+    height: 13rem;
+    width: 100%;
+  }
+}
