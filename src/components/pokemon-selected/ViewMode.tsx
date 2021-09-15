@@ -5,7 +5,6 @@ import { setShow } from "../../redux/actions/SingleView";
 import { cleanSelectedPokemons } from "../../redux/actions/PokemonActions";
 import { setComparisonChart } from "../../redux/actions/PokemonActions";
 import ShowPokemonCompare from "./ShowPokemonCompare";
-import { VoidExpression } from "ts-morph";
 
 interface pokemons{
   image: string; 
