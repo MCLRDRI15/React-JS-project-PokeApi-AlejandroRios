@@ -1,11 +1,31 @@
-import React, { useEffect, useRef } from "react";
+import React, { FunctionComponent, useEffect, useRef } from "react";
 import Chart from "chart.js";
 
-const DobleCharts = ({ stats, bases, name, color, bases2, name2, color2 }) => {
-  const chartRef = useRef();
+type ChartProps = {
+  stats: string[];
+  bases: number[];
+  name: string;
+  color: string;
+  stats2: string[];
+  bases2: number[];
+  name2: string;
+  color2: string;
+};
+
+const DobleCharts: FunctionComponent<ChartProps> = ({
+  stats,
+  bases,
+  name,
+  color,
+  stats2,
+  bases2,
+  name2,
+  color2,
+}) => {
+  const chartRef = React.useRef() as React.MutableRefObject<HTMLCanvasElement>;
 
   useEffect(() => {
-    const ctx = chartRef.current.getContext("2d");
+    const ctx: any = chartRef.current.getContext("2d");
     new Chart(ctx, {
       type: "bar",
       data: {
