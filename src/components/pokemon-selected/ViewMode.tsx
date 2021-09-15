@@ -8,16 +8,24 @@ import ShowPokemonCompare from "./ShowPokemonCompare";
 import { VoidExpression } from "ts-morph";
 
 interface pokemons{
-  name: string;
-  url: string;
+  image: string; 
+  flavor_text_entries: { flavor_text: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined; }[];
+  height: number; 
+  weight: number; 
+  abilities: string[]; 
+  gender: number;
+  types: string[]; 
+  stats: string[]; 
+  name: string; 
+  color: { name: string; };
 }
 
 interface Props{
-  setShow: boolean;
+  setShow: Function;
   viewState: boolean;
   pokemonInPokeball: pokemons[];
-  cleanSelectedPokemons: string;
-  setComparisonChart: boolean;
+  cleanSelectedPokemons: VoidFunction;
+  setComparisonChart: VoidFunction;
   showChart: boolean;
 }
 
@@ -31,15 +39,15 @@ const ViewMode = ({
 }: Props) => {
   const cleanPokemonArray = ():void => {
     setShow?(viewState):Boolean;
-    cleanSelectedPokemons?(''):String;
+    cleanSelectedPokemons();
     if (showChart) {
-      setComparisonChart?(true):Boolean;
+      setComparisonChart();
     }
   };
 
   const keepPokemon = ():void => {
     setShow?(viewState):Boolean;
-    setComparisonChart?(true):Boolean;
+    setComparisonChart();
   };
 
   return (
@@ -70,7 +78,7 @@ const mapStateToProps = (state: { singleView: { showWindow: boolean; }; pokemons
   };
 };
 
-const mapDispatchToProps = (dispatch: (arg0: {type: string; payload?: | {oldState: boolean, {} }}) => void) => void {
+const mapDispatchToProps = (dispatch: (arg0: { (dispatch: (arg0: { type: string; payload: { oldState?: boolean; }; }) => void): void; (dispatch: (arg0: { type: string; payload: { pokemons: String[]; }; }) => void): void; (dispatch: (arg0: { type: string; payload: { actualState: boolean; }; }) => void): void; }) => any) => {
   return {
     setShow: (oldState: boolean) => dispatch(setShow(oldState)),
     cleanSelectedPokemons: () => dispatch(cleanSelectedPokemons()),

@@ -7,14 +7,15 @@ interface pokemons{
   image: string; 
   flavor_text_entries: { flavor_text: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined; }[];
   height: number; 
-  weight: number;
-  gender: number; 
+  weight: number; 
   abilities: string[]; 
+  gender: number;
   types: string[]; 
   stats: string[]; 
   name: string; 
   color: { name: string; };
 }
+
 
 interface Props {
   pokemonInPokeball: Array<pokemons>;
@@ -74,7 +75,7 @@ const ShowPokemonCompare = ({
             
             <div className="  relative bottom-24 flex flex-col content-between gap-4">
             <span className="relative right-24 mobile:right-32 top-16">
-              {pokemonInPokeball[0].abilities.map((abilities: string | { ability: { name?: {} | string; }; }) => {
+              {pokemonInPokeball[0].abilities.map((abilities: string | { ability: { name?: string; }; }) => {
                 return (
                   <div key={abilities.ability.name}>
                     {abilities.ability.name}
@@ -84,7 +85,7 @@ const ShowPokemonCompare = ({
             </span>
             <span className="text-center  mt-2 mb-0 mr-5 ml-4 font-bold mobile:text-1xl text-red-500">Abilities</span>  
             <span className="relative left-24 mobile:left-32 bottom-12">
-              {pokemonInPokeball[1].abilities.map((abilities: string |  { ability: { name?: {} | string; }; }) => {
+              {pokemonInPokeball[1].abilities.map((abilities: string |  { ability: { name?: string; }; }) => {
                 return (
                   <div key={abilities.ability.name}>
                     {abilities.ability.name}
@@ -110,7 +111,7 @@ const ShowPokemonCompare = ({
             ? "black"
             : pokemonInPokeball[0].color.name
         }
-        stats2={pokemonInPokeball[1].stats.map((stat: { stat: string | { name: string; }; }) => {
+        stats2={pokemonInPokeball[1].stats.map((stat: string | { stat: string | { name: string; }; }) => {
           return stat.stat.name;
         })}
         bases2={pokemonInPokeball[1].stats.map((stat: string | { base_stat: number; }) => {

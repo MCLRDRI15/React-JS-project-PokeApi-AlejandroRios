@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useEffect  } from "react";
 import { connect } from "react-redux";
 import { fetchRequest, handlerFetch } from "../../redux/actions/PokemonActions";
 import PokemonCard from "../pokemons-cards/PokeCards";
 import ViewMode from "../pokemon-selected/ViewMode";
 import Form from "../input-form-component/Form";
-import { JsxElement } from "ts-morph";
+
 
 interface pokemons{
   name: string;
@@ -13,14 +13,14 @@ interface pokemons{
 
 interface Props {
   pokemonsList: pokemons[];
-  fetchRequest: number | unknown;
-  handlerFetch: number | unknown;
-  counter: Number;
+  fetchRequest: Function;
+  handlerFetch: Function;
+  counter: number;
 }
 
 const pokelist = ({ pokemonsList, fetchRequest, handlerFetch, counter }:Props) => {
   useEffect(() => {
-    fetchRequest?(counter):Number;
+    fetchRequest(counter);
   }, [fetchRequest, counter]);
 
   window.onscroll = ():void => {
@@ -28,7 +28,7 @@ const pokelist = ({ pokemonsList, fetchRequest, handlerFetch, counter }:Props) =
       window.innerHeight + document.documentElement.scrollTop ===
       document.documentElement.offsetHeight
     ) {
-      handlerFetch?(counter):Number;
+      handlerFetch(counter);
     }
   };
 
@@ -46,7 +46,7 @@ const pokelist = ({ pokemonsList, fetchRequest, handlerFetch, counter }:Props) =
         ))}
       </ul>
       <div>
-        <ViewMode />
+        <ViewMode/>
       </div>
     </div>
   );
@@ -59,7 +59,7 @@ const mapStateToProps = (state: { pokemons: { counter: Number; pokemonsList: pok
   };
 };
 
-const mapDispatchToProps = (dispatch: (arg0: {type: string; payload?: | { url: string, counter: number }}) => void) => {
+const mapDispatchToProps = (dispatch: (arg0: { (dispatch: (arg0: { type: string; payload?: { pokemons: string[]; } | { error: string; } | undefined; }) => void): void; (dispatch: (arg0: { type: string; payload: { counter: Number; }; }) => void): void; }) => any) => {
   return {
     fetchRequest: (url: number) => dispatch(fetchRequest(url)),
     handlerFetch: (counter: number) => dispatch(handlerFetch(counter)),

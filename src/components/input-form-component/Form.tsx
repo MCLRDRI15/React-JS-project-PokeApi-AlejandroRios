@@ -15,7 +15,7 @@ const Form = (props: {
 }) => {
   const input = useRef();
   let [hamburguerState, hamburguerStylesHandler] = useState(false);
-  const getInput = (inputEvent: { target: { value: {} | String | unknown } }) => {
+  const getInput = (inputEvent: { target: { value?: String | unknown } }) => {
     props.addSearch(
       inputEvent.target.value,
       props.state.pokemons.pokemonSecondary
@@ -101,7 +101,7 @@ const mapStateToProps = (state: RootStateOrAny) => {
   };
 };
 
-const mapDispatchToProps = (dispatch: (arg0: {type: string; payload?: | { search: string, pokemonSecondary: string }}) => void) => {
+const mapDispatchToProps = (dispatch: (arg0: {type: string; payload?: | { search: string, pokemonSecondary: string[] }}) => void) => {
   return {
     addSearch: (search: string, pokemonSecondary: string[]) =>
       dispatch(addSearch(search, pokemonSecondary)),

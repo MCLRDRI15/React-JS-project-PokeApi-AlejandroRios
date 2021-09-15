@@ -2,12 +2,20 @@ import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 
 interface pokemons{
-  name: string;
-  url: string;
+  image: string; 
+  flavor_text_entries: { flavor_text: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined; }[];
+  height: number; 
+  weight: number; 
+  abilities: string[]; 
+  gender: number;
+  types: string[]; 
+  stats: string[]; 
+  name?: string; 
+  color: { name: string; };
 }
 
 interface Props {
-  pokemonInPokeball: Array<pokemons>;
+  pokemonInPokeball: pokemons[];
   showChart: boolean;
 }
 

@@ -8,7 +8,8 @@ interface pokemons{
   image: string; 
   flavor_text_entries: { flavor_text: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined; }[];
   height: number; 
-  weight: number; 
+  weight: number;
+  gender: number;
   abilities: string[]; 
   types: string[]; 
   stats: string[]; 
