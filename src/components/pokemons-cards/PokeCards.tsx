@@ -65,7 +65,7 @@ const mapStateToProps = (state: { singleView: { showWindow: boolean; }; }) => {
   };
 };
 
-const mapDispatchToProps = (dispatch: (arg0: any) => void) => {
+const mapDispatchToProps = (dispatch: (arg0: {type: string; payload?: | { oldState: boolean, pokemon: string[], pokemonDescriptionUrl: string }}) => void) => {
   return {
     setShow: (oldState: boolean) => dispatch(setShow(oldState)),
     addSelectedPokemon: (pokemon: string[], pokemonUrl: string, pokemonDescriptionUrl: string) =>
