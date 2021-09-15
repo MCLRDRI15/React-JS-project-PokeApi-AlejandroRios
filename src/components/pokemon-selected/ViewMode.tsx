@@ -5,6 +5,7 @@ import { setShow } from "../../redux/actions/SingleView";
 import { cleanSelectedPokemons } from "../../redux/actions/PokemonActions";
 import { setComparisonChart } from "../../redux/actions/PokemonActions";
 import ShowPokemonCompare from "./ShowPokemonCompare";
+import { VoidExpression } from "ts-morph";
 
 interface pokemons{
   name: string;
@@ -69,7 +70,7 @@ const mapStateToProps = (state: { singleView: { showWindow: boolean; }; pokemons
   };
 };
 
-const mapDispatchToProps = (dispatch: (arg0: any) => void) => {
+const mapDispatchToProps = (dispatch: (arg0: {type: string; payload?: | {oldState: boolean, {} }}) => void) => void {
   return {
     setShow: (oldState: boolean) => dispatch(setShow(oldState)),
     cleanSelectedPokemons: () => dispatch(cleanSelectedPokemons()),

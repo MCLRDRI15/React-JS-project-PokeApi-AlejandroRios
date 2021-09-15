@@ -37,7 +37,7 @@ const mapStateToProps = (state: { pokemons: { pokemonInPokeball: String[]; showC
   };
 };
 
-const mapDispatchToProps = (dispatch: any) => {
+const mapDispatchToProps = () => {
   return {};
 };
 

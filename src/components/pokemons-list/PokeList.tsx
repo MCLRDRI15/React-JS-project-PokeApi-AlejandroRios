@@ -59,7 +59,7 @@ const mapStateToProps = (state: { pokemons: { counter: Number; pokemonsList: pok
   };
 };
 
-const mapDispatchToProps = (dispatch: (arg0: any) => void) => {
+const mapDispatchToProps = (dispatch: (arg0: {type: string; payload?: | { url: string, counter: number }}) => void) => {
   return {
     fetchRequest: (url: number) => dispatch(fetchRequest(url)),
     handlerFetch: (counter: number) => dispatch(handlerFetch(counter)),
