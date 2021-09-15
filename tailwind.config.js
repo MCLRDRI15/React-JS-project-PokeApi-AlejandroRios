@@ -3,14 +3,29 @@ const colors = require('tailwindcss/colors');
 
 module.exports = {
   purge: [],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: false, 
   theme: {
+    fontFamily: {
+      'sans': ['ui-sans-serif', 'system-ui'],
+      'serif': ['ui-serif', 'Georgia'],
+      'mono': ['ui-monospace', 'SFMono-Regular'],
+      'display': ['Oswald'],
+      'body': ['"Open Sans"'],
+     },
+    boxShadow: {
+      sm: '0 20px 25px -10px #f5f1f1',
+    },
+    gridTemplateColumns: {
+     'auto': 'repeat(auto-fill, 11rem)',
+     'gifs': '30% 40% 30%',
+     'full': '100%'
+    },
     screens: {
       'tablet': '850px',
       'laptop': '1024px',
       'desktop': '1280px',
       'mobile': '544px',
-      'mobilexs': '370px'
+      'mobilexs': '481px'
     },
     fontSize: {
       'xs': '.75rem',
@@ -30,6 +45,9 @@ module.exports = {
     },
     extend: {
       colors: {
+        red:{
+          cardHover: '#e4b2b2'
+        },
         yellow: {
           border: '#c5c5ca33',
           backgroundColor: 'linear-gradient(to right, #d2d733, #d9dd2d, #e0e326, #e7e81d,#eeee10)',
@@ -41,10 +59,14 @@ module.exports = {
         },
         white: {
           DEFAULT: '#ffffffff',
+          backgroundCard: '#f5f1f1'
         },
         blue: {
           bg: '#4789cf',
-          secondayBlue: '#355d89'
+          secondayBlue: '#355d89',
+          generalBlueColor: '#4789cf',
+          BlueButtonColor: '#4789cf',
+          BlueColor: '#2958af'
         },
         green: {
           light: '#616161',
