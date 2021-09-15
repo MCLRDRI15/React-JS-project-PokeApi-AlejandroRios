@@ -2,7 +2,7 @@ import React from "react";
 import DobleCharts from "../charts-show-compare-folder/ChartsCompare";
 import {FaSkullCrossbones } from "react-icons/fa";
 import ScrollLock from 'react-scrolllock';
-
+import "./PokemonCompare.module.css";
 
 const ShowPokemonCompare = ({
   pokemonInPokeball,
@@ -10,52 +10,52 @@ const ShowPokemonCompare = ({
   cleanPokemonArray,
 }) => (
   <div
-    className={viewState ? "z-40 w-screen h-full fixed top-0 bg-grey-greyColor overflow-auto  cursor-pointer" : "hidden"}
+    className={viewState ? "compare-container-chart" : "hidden-box"}
   >
     <ScrollLock isActive={viewState}> 
-    <div className="w-11/12 tablet:w-2/3 mt-4 mb-16 mr-auto ml-auto p-4 laptop:w-5/12 rounded-xl border-2 border-gray-900 cursor-auto overflow-auto bg-yellow-yellowInput">
-      <div className="p-2 text-sm w-full flex content-between items-center mobile:text-xl font-extrabold border-b  border-gray-900">
+    <div className="pokecard-compare-container">
+      <div className="versus-names">
         {String(pokemonInPokeball[0].name).toUpperCase()} VS.
         {String(pokemonInPokeball[1].name).toUpperCase()}
-        <button className="ml-auto mr-2 w-8 h-9 font-black rounded-xl text-xl text-red-500 bg-white" onClick={cleanPokemonArray}>
-          <FaSkullCrossbones className="relative left-1.5"/>
+        <button className="compare-close-button" onClick={cleanPokemonArray}>
+          <FaSkullCrossbones className="close-icon-skull"/>
         </button>
       </div>
       <div className="body-chart">
-        <div className="m-auto mt-4 w-full flex content-between items-center bg-background-imagebackground border-b border-white rounded-3xl">
+        <div className="images-box">
           <img
             src={`${pokemonInPokeball[0].image}`}
-            className="m-auto w-48 h-auto"
+            className="image-compare"
             alt="pokemons"
           />
-          <span className="text-lg font-bold text-red-500">VS</span>
+          <span className="versus">VS</span>
           <img
             src={`${pokemonInPokeball[1].image}`}
-            className="m-auto w-48 h-auto"
+            className="image-compare"
             alt="pokemons"
           />
         </div>
-        <div className="bg-background-imagebackground border border-white rounded-3xl w-full mt-4 mb-4 mr-auto ml-auto flex flex-col items-center text-center">
-          <div className="flex flex-col items-center text-center font-bold">
-            <div className="flex flex-col content-between">
-              <div className="flex flex-col">
-            <span className="relative right-24 top-28 text-center mt-4">{pokemonInPokeball[0].height/10}m </span>
-            <span className="relative right-24 top-28 text-center mt-4">{pokemonInPokeball[0].weight/10}kg</span>
-            <span className="relative right-24 top-28 text-center mt-4">{pokemonInPokeball[0].gender}</span>
+        <div className="pokemons-compare-data">
+          <div className="central-dates">
+            <div className="battle-between">
+              <div className="dates-comparing">
+            <span className="compare-data-information-left">{pokemonInPokeball[0].height/10}m </span>
+            <span className="compare-data-information-left">{pokemonInPokeball[0].weight/10}kg</span>
+            <span className="compare-data-information-left">{pokemonInPokeball[0].gender}</span>
             </div>
-            <div className="flex flex-col content-between">
-            <strong className=" text-center  mt-2 mb-0 mr-5 ml-4 font-bold mobile:text-1xl text-red-500">Height</strong>  
-            <strong className=" text-center  mt-2 mb-0 mr-5 ml-4 font-bold mobile:text-1xl text-red-500">Weight </strong> 
-            <strong className=" text-center  mt-2 mb-0 mr-5 ml-4 font-bold mobile:text-1xl text-red-500">Gender</strong> 
+            <div className="text-between">
+            <strong className="box">Height</strong>  
+            <strong className="box">Weight </strong> 
+            <strong className="box">Gender</strong> 
             </div>
-            <div className="flex flex-col">
-            <span className="relative left-24 bottom-28 mobile:bottom-32 text-center mt-4">{pokemonInPokeball[1].height/10}m</span>
-            <span className="relative left-24 bottom-28 mobile:bottom-32 text-center mt-4">{pokemonInPokeball[1].weight/10}kg</span>
-            <span className="relative left-24 bottom-28 mobile:bottom-32 text-center mt-4">{pokemonInPokeball[1].gender}</span>
+            <div className="dates-comparing">
+            <span className="compare-data-information-right">{pokemonInPokeball[1].height/10}m</span>
+            <span className="compare-data-information-right">{pokemonInPokeball[1].weight/10}kg</span>
+            <span className="compare-data-information-right">{pokemonInPokeball[1].gender}</span>
             </div>
             
-            <div className="  relative bottom-24 flex flex-col content-between gap-4">
-            <span className="relative right-24 mobile:right-32 top-16">
+            <div className="dates">
+            <span className="box-compare-left">
               {pokemonInPokeball[0].abilities.map((abilities) => {
                 return (
                   <div key={abilities.ability.name}>
@@ -64,8 +64,8 @@ const ShowPokemonCompare = ({
                 );
               })}
             </span>
-            <span className="text-center  mt-2 mb-0 mr-5 ml-4 font-bold mobile:text-1xl text-red-500">Abilities</span>  
-            <span className="relative left-24 mobile:left-32 bottom-12">
+            <span className="box">Abilities</span>  
+            <span className="box-compare-right">
               {pokemonInPokeball[1].abilities.map((abilities) => {
                 return (
                   <div key={abilities.ability.name}>

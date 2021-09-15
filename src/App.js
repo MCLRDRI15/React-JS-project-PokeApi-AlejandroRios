@@ -8,7 +8,7 @@ import { Bubbles } from "./components/bubbles-animation/Bubbles";
 import Home from "./components/principal-home-page/Home";
 import Pokelist from "./components/pokemons-list/PokeList";
 
-const App  = (): JSX.Element => {
+const App = () => {
   return (
     <Provider store={store}>
       <Router>

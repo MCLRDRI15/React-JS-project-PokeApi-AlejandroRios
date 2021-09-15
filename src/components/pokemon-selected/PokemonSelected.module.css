@@ -1,0 +1,86 @@
+/* ./src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@media screen and (max-width: 500px){
+  .data{
+    @apply
+    relative
+    right-12;
+  }
+  .show-data{
+    @apply
+    relative
+    right-12;
+  }
+  .flex-informations{
+    @apply
+    relative
+    right-12;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .pokecard-container {
+    @apply
+    w-11/12;
+  }
+  
+}
+
+
+@media screen and (min-width: 541px) and (max-width: 723px) {
+  .pokecard-container {
+    @apply
+    w-9/12;
+  }
+}
+
+@media screen and (min-width: 724px) and (max-width: 1200px) {
+  .pokecard-container {
+    @apply
+    w-6/12;
+  }
+}
+
+.show-data {
+  @apply
+  w-8/12
+  text-center
+  m-auto
+  mb-8
+  font-medium;
+}
+
+.flex-informations {
+  @apply
+  w-8/12
+  m-auto
+  mt-4
+  mb-4
+  flex
+  content-between
+  items-baseline;
+}
+
+.abilities {
+  @apply
+  ml-8
+  mr-20;
+}
+
+.flex-informations .box {
+  @apply
+  font-extrabold
+  text-red-500;
+}
+
+.stats .box {
+  @apply
+  text-center
+  ml-8
+  font-extrabold
+  text-xl;
+}
