@@ -1,10 +1,11 @@
+
 import { SET_SHOW } from "../actions/SingleView";
 
 const initialState = {
   showWindow: false,
 };
 
-function singleView(state = initialState, action) {
+function singleView(state = initialState, action: { type: string }) {
   switch (action.type) {
     case SET_SHOW:
       return {

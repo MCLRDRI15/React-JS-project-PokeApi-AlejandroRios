@@ -1,3 +1,4 @@
+
 import { ADD_SEARCH } from "../actions/InputFormActions";
 
 const inisialState = {
@@ -6,7 +7,10 @@ const inisialState = {
   isSearchActive: false,
 };
 
-function searchPokemon(state = inisialState, action) {
+function searchPokemon(
+  state = inisialState,
+  action: { type: string; payload: string }
+) {
   switch (action.type) {
     case ADD_SEARCH:
       return {

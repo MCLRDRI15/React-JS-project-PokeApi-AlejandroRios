@@ -1,3 +1,4 @@
+
 import {
   FETCH_POKEMONS_REQUEST,
   FETCH_POKEMONS_SUCCESS,
@@ -26,7 +27,22 @@ const initialState = {
   search: "",
 };
 
-function pokemons(state = initialState, action) {
+function pokemons(
+  state = initialState,
+  action: {
+    type: string;
+    payload: {
+      pokemons: { previous: boolean; next: string; results: string[] };
+      error: string;
+      counter: number;
+      pokemon: string[];
+      pokemonDescription: String;
+      search: string;
+      pokemonsList: string[];
+      pokemonSecondary: string[];
+    };
+  }
+) {
   switch (action.type) {
     case FETCH_POKEMONS_REQUEST:
       return {
@@ -79,7 +95,7 @@ function pokemons(state = initialState, action) {
     case CLEAN_SELECTED_POKEMON:
       return {
         ...state,
-        pokemonInPokeball: [...action.payload.pokemons],
+        pokemonInPokeball: { ...action.payload.pokemons },
       };
 
     case SET_COMPARISON_CHART:
@@ -93,15 +109,14 @@ function pokemons(state = initialState, action) {
         ...state,
         search: action.payload.search,
         isFetching: true,
-        pokemonsList: action.payload.pokemonsList
+        pokemonsList: action.payload.pokemonsList,
       };
 
     case RETURN_TO_ORIGINAL_LIST:
-      return{
+      return {
         ...state,
-        pokemonsList: [...action.payload.pokemonSecondary]
-      }
-
+        pokemonsList: [...action.payload.pokemonSecondary],
+      };
 
     default:
       return state;
