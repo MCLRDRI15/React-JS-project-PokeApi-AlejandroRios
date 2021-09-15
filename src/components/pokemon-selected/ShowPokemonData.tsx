@@ -5,15 +5,22 @@ import ScrollLock from 'react-scrolllock';
 
 
 interface pokemons{
-  name: string;
-  url: string;
+  image: string; 
+  flavor_text_entries: { flavor_text: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined; }[];
+  height: number; 
+  weight: number; 
+  abilities: string[]; 
+  types: string[]; 
+  stats: string[]; 
+  name: string; 
+  color: { name: string; };
 }
 
 interface Props {
-  keepPokemon: boolean;
+  keepPokemon: VoidFunction;
   pokemonInPokeball: pokemons[];
   singleView: boolean;
-  cleanPokemonArray: string;
+  cleanPokemonArray: VoidFunction;
 }
 
 
@@ -46,7 +53,7 @@ const ShowPokemonData = ({
           })}
         </div>
         <div className="body-chart">
-          {pokemonInPokeball.map((pokemon: { image: any; flavor_text_entries: { flavor_text: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined; }[]; height: number; weight: number; abilities: string[]; types: string[]; stats: string[]; name: string; color: { name: string; }; }, index = 1) => {
+          {pokemonInPokeball.map((pokemon: { image: string; flavor_text_entries: { flavor_text: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined; }[]; height: number; weight: number; abilities: string[]; types: string[]; stats: string[]; name: string; color: { name: string; }; }, index = 1) => {
             return (
               <div
                 className="principal-information"
@@ -80,7 +87,7 @@ const ShowPokemonData = ({
 
                         <div className="each-ability">
                           <ul>
-                            {pokemon.abilities.map((abilities: string[] | { ability: { name: string }; }) => {
+                            {pokemon.abilities.map((abilities: string | { ability: { name: string  | unknown }; }) => {
                               return (
                                 <li key={abilities.ability.name}>
                                   {abilities.ability.name}
@@ -94,7 +101,7 @@ const ShowPokemonData = ({
                         <span className="box font-extrabold">Types</span>
 
                         <div className="each-type">
-                          {pokemon.types.map((types: string[] | { type: { name: string }; }) => {
+                          {pokemon.types.map((types: string | { type: { name: string }; }) => {
                             return (
                               <li key={types.type.name}>{types.type.name}</li>
                             );
@@ -106,10 +113,10 @@ const ShowPokemonData = ({
                   <div className="stats flex flex-col">
                     <span className="text-center font-extrabold text-xl text-red-500">Stats:</span>
                     <Charts
-                      stats={pokemon.stats.map((stat: any | { stat: { name: any; }; }) => {
+                      stats={pokemon.stats.map((stat: string | { stat: { name: string; } | unknown; }) => {
                         return stat.stat.name;
                       })}
-                      bases={pokemon.stats.map((stat: any | { base_stat: any; }) => {
+                      bases={pokemon.stats.map((stat: number | { base_stat: number; } | unknown) => {
                         return stat.base_stat;
                       })}
                       name={pokemon.name}

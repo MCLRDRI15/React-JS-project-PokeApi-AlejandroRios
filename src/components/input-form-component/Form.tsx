@@ -15,7 +15,7 @@ const Form = (props: {
 }) => {
   const input = useRef();
   let [hamburguerState, hamburguerStylesHandler] = useState(false);
-  const getInput = (inputEvent: { target: { value: String } }) => {
+  const getInput = (inputEvent: { target: { value: {} | String | unknown } }) => {
     props.addSearch(
       inputEvent.target.value,
       props.state.pokemons.pokemonSecondary

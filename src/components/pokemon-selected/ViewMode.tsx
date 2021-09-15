@@ -28,17 +28,17 @@ const ViewMode = ({
   setComparisonChart,
   showChart,
 }: Props) => {
-  const cleanPokemonArray = () => {
+  const cleanPokemonArray = ():void => {
     setShow?(viewState):Boolean;
-    cleanSelectedPokemons?():String;
+    cleanSelectedPokemons?(''):String;
     if (showChart) {
-      setComparisonChart?():Boolean;
+      setComparisonChart?(true):Boolean;
     }
   };
 
-  const keepPokemon = () => {
+  const keepPokemon = ():void => {
     setShow?(viewState):Boolean;
-    setComparisonChart?():Boolean;
+    setComparisonChart?(true):Boolean;
   };
 
   return (
